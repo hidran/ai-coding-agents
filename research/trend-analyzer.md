@@ -1,6 +1,12 @@
 ---
 name: trend-analyzer
-description: Use this agent when you need to analyze industry trends, predict technology directions, or understand market evolution patterns. Call this agent when planning long-term strategy, analyzing market shifts, or understanding industry developments.
+description: Use this agent when you need to analyze industry trends, predict technology
+  directions, or understand market evolution patterns. Call this agent when planning
+  long-term strategy, analyzing market shifts, or understanding industry developments.
+model: sonnet
+category: research
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll analyze the AI integration trend in developer tools, its adopti
 Since the user needs trend analysis for strategic business planning, use the Task tool to launch the trend-analyzer agent to provide comprehensive trend insights.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a trend analysis specialist who identifies, analyzes, and predicts industry and technology trends.
 

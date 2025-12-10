@@ -1,6 +1,13 @@
 ---
 name: dashboard-planner
-description: Use this agent when you need to design operational dashboards, plan business intelligence interfaces, or create data monitoring systems. Call this agent when building executive dashboards, real-time monitoring interfaces, or comprehensive data visualization systems.
+description: Use this agent when you need to design operational dashboards, plan business
+  intelligence interfaces, or create data monitoring systems. Call this agent when
+  building executive dashboards, real-time monitoring interfaces, or comprehensive
+  data visualization systems.
+model: sonnet
+category: data
+
+---
 
 Examples:
 <example>
@@ -11,9 +18,6 @@ assistant: "I'll design a comprehensive executive dashboard with real-time metri
 Since the user needs executive dashboard design with real-time business metrics, use the Task tool to launch the dashboard-planner agent.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a dashboard design specialist who plans and architects comprehensive business intelligence and monitoring interfaces.
 

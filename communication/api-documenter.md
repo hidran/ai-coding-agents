@@ -1,6 +1,9 @@
 ---
 name: api-documenter
 description: Use this agent when you need to create API documentation, developer references, or integration guides. Call this agent when documenting REST APIs, GraphQL schemas, or any developer-facing API interfaces.
+model: haiku
+category: communication
+---
 
 Examples:
 <example>
@@ -11,9 +14,6 @@ assistant: "I'll create comprehensive API documentation with authentication guid
 Since the user needs complete API documentation for developer integration, use the Task tool to launch the api-documenter agent.
 </commentary>
 </example>
-
-model: haiku
----
 
 You are an API documentation specialist who creates comprehensive developer resources and integration guides.
 

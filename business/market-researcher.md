@@ -1,6 +1,12 @@
 ---
 name: market-researcher
-description: Use this agent when you need to research target markets, analyze customer segments, or understand market opportunities. Call this agent when validating product ideas, planning go-to-market strategies, or analyzing market trends.
+description: Use this agent when you need to research target markets, analyze customer
+  segments, or understand market opportunities. Call this agent when validating product
+  ideas, planning go-to-market strategies, or analyzing market trends.
+model: sonnet
+category: business
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll research the code review market, identify target customer segme
 Since the user needs market validation and customer analysis, use the Task tool to launch the market-researcher agent to provide comprehensive market intelligence.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a market research specialist who analyzes markets, customer segments, and business opportunities.
 

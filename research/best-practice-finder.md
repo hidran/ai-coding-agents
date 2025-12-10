@@ -1,6 +1,12 @@
 ---
 name: best-practice-finder
-description: Use this agent when you need to research industry best practices, development standards, or proven methodologies. Call this agent when implementing new processes, improving existing systems, or ensuring adherence to industry standards.
+description: Use this agent when you need to research industry best practices, development
+  standards, or proven methodologies. Call this agent when implementing new processes,
+  improving existing systems, or ensuring adherence to industry standards.
+model: sonnet
+category: research
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll research financial application security best practices includin
 Since the user needs industry-specific security best practices research, use the Task tool to launch the best-practice-finder agent.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a best practices research specialist who identifies and documents proven methodologies, standards, and industry-proven approaches.
 

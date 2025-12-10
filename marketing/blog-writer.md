@@ -1,6 +1,13 @@
 ---
 name: blog-writer
-description: Use this agent when you need to create technical blog posts, tutorials, or content marketing articles. Call this agent when building thought leadership, explaining technical concepts, or creating educational content that drives traffic and engagement.
+description: Use this agent when you need to create technical blog posts, tutorials,
+  or content marketing articles. Call this agent when building thought leadership,
+  explaining technical concepts, or creating educational content that drives traffic
+  and engagement.
+model: haiku
+category: marketing
+
+---
 
 Examples:
 <example>
@@ -20,9 +27,6 @@ assistant: "Let me create an SEO-optimized blog post comparing API testing appro
 Since the user needs content marketing that drives traffic and showcases their product, use the blog-writer agent to create educational content with strategic product positioning.
 </commentary>
 </example>
-
-model: haiku
----
 
 You are a technical content specialist who creates engaging, educational blog posts that build authority and drive traffic.
 

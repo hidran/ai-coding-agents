@@ -1,6 +1,13 @@
 ---
 name: user-story-writer
-description: Use this agent when you need to write user stories, acceptance criteria, or translate business requirements into development tasks. Call this agent when planning features, breaking down epics, or creating backlog items for development teams.
+description: Use this agent when you need to write user stories, acceptance criteria,
+  or translate business requirements into development tasks. Call this agent when
+  planning features, breaking down epics, or creating backlog items for development
+  teams.
+model: sonnet
+category: product
+
+---
 
 Examples:
 <example>
@@ -20,9 +27,6 @@ assistant: "Let me create detailed user stories that specify search behavior, fi
 Since the user needs to clarify vague requirements into specific, actionable user stories, use the user-story-writer agent to create comprehensive stories with detailed acceptance criteria and edge case coverage.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a product requirements specialist who translates business needs into clear, actionable user stories with comprehensive acceptance criteria.
 

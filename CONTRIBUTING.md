@@ -4,9 +4,13 @@ We welcome contributions to make this the most comprehensive collection of Claud
 
 ## 🤝 How to Contribute
 
+## About this Fork
+
+This project is a fork maintained by [hidran](https://github.com/hidran). We welcome contributions that align with the project's goals. Please submit issues and pull requests to this repository.
+
 ### Adding New Agents
 
-1. **Choose a Category**: Place your agent in the appropriate category folder
+1. **Choose a Category**: Place your agent in the appropriate category folder (e.g., `code-quality/`)
 2. **Follow the Template**: Use the established agent format with YAML frontmatter
 3. **Be Specific**: Include detailed examples and clear trigger scenarios
 4. **Test Thoroughly**: Ensure your agent works as expected in Claude Code
@@ -16,8 +20,12 @@ We welcome contributions to make this the most comprehensive collection of Claud
 ```markdown
 ---
 name: your-agent-name
-description: Detailed description of when to use this agent, with specific trigger scenarios and delegation examples
+category: the-category-folder-name
+description: Detailed description of when to use this agent, with specific trigger scenarios and delegation examples.
 model: sonnet|haiku
+# Optional fields:
+# tags: [ "tag1", "tag2" ]
+# workflow: [ "next-agent-1", "next-agent-2" ]
 ---
 
 You are a [ROLE] specialist who helps developers with [SPECIFIC TASK].
@@ -84,39 +92,50 @@ claude-agents/
 ├── category-name/
 │   ├── agent-name.md
 │   └── another-agent.md
-├── README.md
-├── install.sh
-└── CONTRIBUTING.md
 ```
 
 ## 🔧 Development Process
 
+The development workflow is now safer and more automated, thanks to the new build and validation script.
+
 ### 1. Fork and Clone
+If you haven't already, fork and clone the repository to your local machine.
 ```bash
 git fork https://github.com/username/claude-agents
 git clone https://github.com/your-username/claude-agents
 cd claude-agents
 ```
 
-### 2. Create Agent
-- Add your agent file to the appropriate category folder
-- Follow the template format exactly
-- Include comprehensive examples
+### 2. Create or Edit an Agent
+- Find the appropriate category in the repository's root directory (e.g., `code-quality/`).
+- Create a new `your-agent-name.md` file or edit an existing one.
+- Make sure to follow the template provided in this guide.
+- **Crucially**, you must include the `category` field in the YAML frontmatter. This must match the name of the directory the file is in.
 
-### 3. Test Your Agent
+### 3. Build and Validate Your Changes
+This is the most important new step. After making your changes, run the build script from the root of the project to ensure your contribution is valid.
+```bash
+./scripts/build.py
+```
+- **If it succeeds:** The script will automatically validate your agent's format, update the `dist/agents.json` manifest, and regenerate the main `docs/README.md`.
+- **If it fails:** The script will print an error telling you exactly what is wrong (e.g., "Missing required field: description"). You must fix the error and run the script again until it succeeds.
+
+### 4. Test Your Agent Locally
+Use the `install.sh` script to install your locally modified and validated agents.
 ```bash
 # Install your agents locally
 ./install.sh
 
 # Test in Claude Code
-# Restart Claude Code and test your agent with various scenarios
+# Restart your IDE and test your agent with various scenarios.
 ```
 
-### 4. Submit Pull Request
-- Create a descriptive PR title
-- Explain what your agent does and why it's needed
-- Include examples of the agent in action
-- Reference any related issues
+### 5. Commit and Submit a Pull Request
+- Commit **all** the files that were modified by you and by the build script. This includes:
+    - Your new or edited agent file (e.g., `docs/code-quality/my-new-agent.md`).
+    - The updated `dist/agents.json`.
+    - The updated `README.md`.
+- Push your changes and open a pull request. The maintainers can see that the build script has already validated your contribution, which will speed up the review process.
 
 ## 📝 Agent Categories
 

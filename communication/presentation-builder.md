@@ -1,6 +1,12 @@
 ---
 name: presentation-builder
-description: Use this agent when you need to create presentations, pitch decks, or structured presentation content. Call this agent when building investor pitches, technical presentations, or stakeholder communications.
+description: Use this agent when you need to create presentations, pitch decks, or
+  structured presentation content. Call this agent when building investor pitches,
+  technical presentations, or stakeholder communications.
+model: haiku
+category: communication
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll create a comprehensive investor pitch deck structure with compe
 Since the user needs investor presentation content, use the Task tool to launch the presentation-builder agent to create structured pitch materials.
 </commentary>
 </example>
-
-model: haiku
----
 
 You are a presentation design specialist who creates compelling, structured presentations and pitch materials.
 

@@ -1,0 +1,616 @@
+[
+  {
+    "name": "accessibility-checker",
+    "category": "product",
+    "description": "Use this agent when you need to audit accessibility compliance, ensure WCAG standards, or make interfaces inclusive for users with disabilities. Call this agent when reviewing interfaces, before major releases, or when addressing accessibility requirements.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/product/accessibility-checker.md",
+    "agents_md": {}
+  },
+  {
+    "name": "ad-copy-creator",
+    "category": "marketing",
+    "description": "Use this agent when you need to create paid advertising copy for Google Ads, Facebook Ads, LinkedIn Ads, or other platforms. Call this agent when launching ad campaigns, optimizing ad performance, or creating promotional content for paid channels.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/ad-copy-creator.md",
+    "agents_md": {}
+  },
+  {
+    "name": "analytics-setup",
+    "category": "data",
+    "description": "Use this agent when you need to implement analytics tracking, set up measurement systems, or create data collection strategies. Call this agent when setting up product analytics, tracking user behavior, or implementing data-driven decision systems.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/data/analytics-setup.md",
+    "agents_md": {}
+  },
+  {
+    "name": "api-designer",
+    "category": "architecture",
+    "description": "Use this agent when you need to design REST APIs, GraphQL schemas, or other API interfaces. Call this agent when planning API architecture, defining endpoints, or creating API documentation and specifications.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/architecture/api-designer.md",
+    "agents_md": {
+      "temperature": 0.2,
+      "context": {
+        "include": [
+          "architecture/api-designer.md",
+          "README.md"
+        ]
+      },
+      "triggers": [
+        {
+          "github.event": "pull_request.opened"
+        },
+        {
+          "command": "/design-api"
+        }
+      ],
+      "permissions": {
+        "repo": "read",
+        "pull_requests": "comment"
+      },
+      "tools": [],
+      "guardrails": [
+        "Never change existing API contracts without explicit approval"
+      ]
+    }
+  },
+  {
+    "name": "api-documenter",
+    "category": "communication",
+    "description": "Use this agent when you need to create API documentation, developer references, or integration guides. Call this agent when documenting REST APIs, GraphQL schemas, or any developer-facing API interfaces.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/communication/api-documenter.md",
+    "agents_md": {}
+  },
+  {
+    "name": "backup-planner",
+    "category": "devops",
+    "description": "Use this agent when you need to design backup strategies, plan disaster recovery, or implement data protection systems. Call this agent when setting up data protection, planning for disasters, or ensuring business continuity.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/devops/backup-planner.md",
+    "agents_md": {}
+  },
+  {
+    "name": "best-practice-finder",
+    "category": "research",
+    "description": "Use this agent when you need to research industry best practices, development standards, or proven methodologies. Call this agent when implementing new processes, improving existing systems, or ensuring adherence to industry standards.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/research/best-practice-finder.md",
+    "agents_md": {}
+  },
+  {
+    "name": "blog-writer",
+    "category": "marketing",
+    "description": "Use this agent when you need to create technical blog posts, tutorials, or content marketing articles. Call this agent when building thought leadership, explaining technical concepts, or creating educational content that drives traffic and engagement.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/blog-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "brand-designer",
+    "category": "design",
+    "description": "Use this agent when you need to create brand identity elements, design logos, or establish visual brand guidelines. Call this agent when starting new projects, rebranding, or creating consistent brand experiences across your application.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/brand-designer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "business-model-analyzer",
+    "category": "business",
+    "description": "Use this agent when you need to analyze business models, evaluate monetization strategies, or optimize business operations. Call this agent when planning business strategy, evaluating pivots, or optimizing existing business models.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/business/business-model-analyzer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "changelog-writer",
+    "category": "communication",
+    "description": "Use this agent when you need to create release notes, changelogs, or product update communications. Call this agent when releasing new features, fixing bugs, or communicating product changes to users.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/communication/changelog-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "code-reviewer",
+    "category": "code-quality",
+    "description": "Use this agent when you need expert code review and quality analysis. Call this agent after writing new code, before committing changes, or when you want to improve code quality and catch potential issues.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/code-quality/code-reviewer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "color-specialist",
+    "category": "design",
+    "description": "Use this agent when you need to choose color schemes, create color palettes, or ensure color accessibility. Call this agent when designing interfaces, establishing brand colors, or optimizing color contrast and accessibility.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/color-specialist.md",
+    "agents_md": {}
+  },
+  {
+    "name": "competitor-researcher",
+    "category": "product",
+    "description": "Use this agent when you need to analyze competitors, research market positioning, or understand competitive landscape. Call this agent when planning product strategy, evaluating market opportunities, or responding to competitive threats.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/product/competitor-researcher.md",
+    "agents_md": {}
+  },
+  {
+    "name": "copywriter",
+    "category": "marketing",
+    "description": "Use this agent when you need compelling marketing copy, product descriptions, headlines, or persuasive content. Call this agent when creating landing pages, writing product copy, crafting email campaigns, or developing marketing materials.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/copywriter.md",
+    "agents_md": {}
+  },
+  {
+    "name": "cost-optimizer",
+    "category": "devops",
+    "description": "Use this agent when you need to analyze and reduce cloud infrastructure costs, optimize resource usage, or plan cost-effective scaling strategies. Call this agent when cloud bills are high, when optimizing for efficiency, or when planning budget-conscious growth.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/devops/cost-optimizer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "dashboard-planner",
+    "category": "data",
+    "description": "Use this agent when you need to design operational dashboards, plan business intelligence interfaces, or create data monitoring systems. Call this agent when building executive dashboards, real-time monitoring interfaces, or comprehensive data visualization systems.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/data/dashboard-planner.md",
+    "agents_md": {}
+  },
+  {
+    "name": "data-visualizer",
+    "category": "data",
+    "description": "Use this agent when you need to create charts, graphs, or visual representations of data. Call this agent when presenting data insights, creating reports, or building data visualization dashboards.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/data/data-visualizer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "database-planner",
+    "category": "architecture",
+    "description": "Use this agent when you need to design database schemas, plan data models, optimize queries, or solve database-related architectural challenges. Call this agent when setting up new databases, migrating data structures, or optimizing database performance.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/architecture/database-planner.md",
+    "agents_md": {}
+  },
+  {
+    "name": "deployment-troubleshooter",
+    "category": "devops",
+    "description": "Use this agent when you need to fix deployment issues, resolve CI/CD problems, or troubleshoot infrastructure deployments. Call this agent when deployments fail, when experiencing environment issues, or when setting up deployment pipelines.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/devops/deployment-troubleshooter.md",
+    "agents_md": {}
+  },
+  {
+    "name": "design-system-builder",
+    "category": "design",
+    "description": "Use this agent to create and manage comprehensive design systems. Call this agent when you need to establish consistent design patterns, create reusable component libraries, or define the visual language (colors, typography, icons, layout) for a project.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/design-system-builder.md",
+    "agents_md": {}
+  },
+  {
+    "name": "documentation-writer",
+    "category": "code-quality",
+    "description": "Use this agent when you need to create or improve code documentation, API docs, README files, or technical documentation. Call this agent when code lacks proper documentation, when onboarding new team members, or when preparing for code handoffs.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/code-quality/documentation-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "email-writer",
+    "category": "marketing",
+    "description": "Use this agent when you need to create email campaigns, newsletters, or automated email sequences. Call this agent when setting up email marketing, creating welcome sequences, or developing email communication strategies.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/email-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "error-investigator",
+    "category": "devops",
+    "description": "Use this agent when you need to debug production issues, analyze error logs, or troubleshoot system problems. Call this agent when experiencing outages, investigating bugs, or analyzing system failures.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/devops/error-investigator.md",
+    "agents_md": {}
+  },
+  {
+    "name": "feature-prioritizer",
+    "category": "product",
+    "description": "Use this agent when you need to prioritize feature requests, evaluate competing development options, or make strategic product decisions. Call this agent when managing product backlogs, responding to user feedback, or planning development roadmaps.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/product/feature-prioritizer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "feature-spec-writer",
+    "category": "architecture",
+    "description": "Use this agent when you need to write detailed technical specifications for new features or system components. Call this agent when planning feature development, documenting requirements, or creating technical design documents.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/architecture/feature-spec-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "feedback-analyzer",
+    "category": "product",
+    "description": "Use this agent when you need to analyze user feedback, customer reviews, or support tickets to extract actionable insights. Call this agent when processing user feedback, analyzing satisfaction surveys, or identifying product improvement opportunities.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/product/feedback-analyzer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "financial-planner",
+    "category": "business",
+    "description": "Use this agent when you need to create financial projections, analyze business finances, or plan funding strategies. Call this agent when preparing for investment, analyzing financial performance, or planning business growth.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/business/financial-planner.md",
+    "agents_md": {}
+  },
+  {
+    "name": "icon-designer",
+    "category": "design",
+    "description": "Use this agent when you need to design custom icons, create iconography systems, or plan visual symbols for your application. Call this agent when building icon libraries, creating custom graphics, or establishing consistent visual language.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/icon-designer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "landing-page-writer",
+    "category": "marketing",
+    "description": "Use this agent when you need to create high-converting landing page copy, optimize conversion rates, or write persuasive sales pages. Call this agent when launching new products, creating marketing campaigns, or improving existing landing page performance.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/landing-page-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "layout-designer",
+    "category": "design",
+    "description": "Use this agent when you need to create page layouts, design responsive grid systems, or plan content organization. Call this agent when building new pages, optimizing mobile experiences, or creating consistent layout patterns.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/layout-designer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "library-evaluator",
+    "category": "research",
+    "description": "Use this agent when you need to evaluate libraries, frameworks, or development tools for specific projects. Call this agent when choosing between technical options, evaluating third-party solutions, or making technology stack decisions.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/research/library-evaluator.md",
+    "agents_md": {}
+  },
+  {
+    "name": "market-researcher",
+    "category": "business",
+    "description": "Use this agent when you need to research target markets, analyze customer segments, or understand market opportunities. Call this agent when validating product ideas, planning go-to-market strategies, or analyzing market trends.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/business/market-researcher.md",
+    "agents_md": {}
+  },
+  {
+    "name": "monitoring-setup",
+    "category": "devops",
+    "description": "Use this agent when you need to set up monitoring, alerting, or observability systems. Call this agent when implementing monitoring solutions, creating dashboards, or setting up incident response systems.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/devops/monitoring-setup.md",
+    "agents_md": {}
+  },
+  {
+    "name": "performance-optimizer",
+    "category": "code-quality",
+    "description": "Use this agent when you need to analyze and optimize code performance, identify bottlenecks, or improve application speed and efficiency. Call this agent when experiencing performance issues, before production deployment, or when optimizing critical code paths.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/code-quality/performance-optimizer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "presentation-builder",
+    "category": "communication",
+    "description": "Use this agent when you need to create presentations, pitch decks, or structured presentation content. Call this agent when building investor pitches, technical presentations, or stakeholder communications.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/communication/presentation-builder.md",
+    "agents_md": {}
+  },
+  {
+    "name": "pricing-strategist",
+    "category": "business",
+    "description": "Use this agent when you need to develop pricing models, analyze pricing strategies, or optimize revenue structures. Call this agent when launching products, evaluating pricing changes, or responding to competitive pressure.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/business/pricing-strategist.md",
+    "agents_md": {}
+  },
+  {
+    "name": "privacy-policy-writer",
+    "category": "business",
+    "description": "Use this agent when you need to create or update privacy policies, ensure GDPR compliance, or handle data protection requirements. Call this agent when launching products, updating data practices, or addressing privacy compliance needs.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/business/privacy-policy-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "refactoring-expert",
+    "category": "code-quality",
+    "description": "Use this agent when you need to refactor existing code, improve code structure, or modernize legacy code. Call this agent when code has become difficult to maintain, when adding new features is challenging, or when you want to improve code organization.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/code-quality/refactoring-expert.md",
+    "agents_md": {}
+  },
+  {
+    "name": "report-generator",
+    "category": "data",
+    "description": "Use this agent when you need to create automated reports, generate business intelligence summaries, or build recurring data reports. Call this agent when creating executive reports, automated analytics summaries, or data-driven presentations.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/data/report-generator.md",
+    "agents_md": {}
+  },
+  {
+    "name": "security-auditor",
+    "category": "code-quality",
+    "description": "Use this agent when you need to audit code for security vulnerabilities, implement security best practices, or review security-sensitive features. Call this agent when handling user data, authentication, payments, or any security-critical functionality.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/code-quality/security-auditor.md",
+    "agents_md": {}
+  },
+  {
+    "name": "seo-optimizer",
+    "category": "marketing",
+    "description": "Use this agent when you need to optimize content for search engines, improve SEO rankings, or research keywords. Call this agent when creating content, optimizing existing pages, or developing SEO strategies.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/seo-optimizer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "social-media-creator",
+    "category": "marketing",
+    "description": "Use this agent when you need to create social media content, plan posting strategies, or engage with online communities. Call this agent when building social presence, creating content calendars, or developing platform-specific content.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/marketing/social-media-creator.md",
+    "agents_md": {}
+  },
+  {
+    "name": "solution-architect",
+    "category": "research",
+    "description": "Use this agent when you need to research and design comprehensive solutions for complex technical challenges. Call this agent when facing architecture problems, integration challenges, or when you need end-to-end solution design.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/research/solution-architect.md",
+    "agents_md": {}
+  },
+  {
+    "name": "sql-expert",
+    "category": "data",
+    "description": "Use this agent when you need to write complex SQL queries, optimize database performance, or solve data analysis problems. Call this agent when working with databases, creating reports, or troubleshooting query performance issues.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/data/sql-expert.md",
+    "agents_md": {}
+  },
+  {
+    "name": "support-responder",
+    "category": "communication",
+    "description": "Use this agent when you need to create customer support responses, help desk communications, or customer service templates. Call this agent when responding to customer issues, creating support documentation, or building customer service workflows.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/communication/support-responder.md",
+    "agents_md": {}
+  },
+  {
+    "name": "system-designer",
+    "category": "architecture",
+    "description": "Use this agent when you need to design system architecture, plan technical infrastructure, or create end-to-end solutions for complex challenges. Call this agent when starting new projects, scaling existing systems, or facing complex architectural and integration problems.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/architecture/system-designer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "team-communicator",
+    "category": "communication",
+    "description": "Use this agent when you need to create internal team communications, status updates, or organizational announcements. Call this agent when writing team updates, project communications, or internal company messaging.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/communication/team-communicator.md",
+    "agents_md": {}
+  },
+  {
+    "name": "tech-stack-advisor",
+    "category": "architecture",
+    "description": "Use this agent when you need to choose technologies, evaluate frameworks, or make architectural technology decisions. Call this agent when starting new projects, considering technology migrations, or evaluating technical options.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/architecture/tech-stack-advisor.md",
+    "agents_md": {}
+  },
+  {
+    "name": "technical-writer",
+    "category": "communication",
+    "description": "Use this agent when you need to create any form of technical documentation, including user guides, API references, README files, or architectural documents. Call this agent when documenting systems, creating user manuals, writing technical tutorials, or generating API documentation.",
+    "model": "haiku",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/communication/technical-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "technology-researcher",
+    "category": "research",
+    "description": "Use this agent when you need to research new technologies, evaluate emerging tools, or analyze technology trends. Call this agent when exploring new tech stacks, researching solutions, or staying current with technology developments.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/research/technology-researcher.md",
+    "agents_md": {}
+  },
+  {
+    "name": "terms-writer",
+    "category": "business",
+    "description": "Use this agent when you need to create terms of service, user agreements, or legal documents for your application. Call this agent when launching products, updating user terms, or addressing legal compliance requirements.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/business/terms-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "test-strategist",
+    "category": "code-quality",
+    "description": "Use this agent when you need to plan testing strategies, write test cases, or improve test coverage. Call this agent when implementing new features, refactoring code, or when you want to ensure comprehensive testing coverage.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/code-quality/test-strategist.md",
+    "agents_md": {}
+  },
+  {
+    "name": "trend-analyzer",
+    "category": "research",
+    "description": "Use this agent when you need to analyze industry trends, predict technology directions, or understand market evolution patterns. Call this agent when planning long-term strategy, analyzing market shifts, or understanding industry developments.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/research/trend-analyzer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "typography-expert",
+    "category": "design",
+    "description": "Use this agent when you need to choose fonts, create typography systems, or optimize text readability and hierarchy. Call this agent when establishing typographic scales, improving content readability, or creating consistent text styling.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/typography-expert.md",
+    "agents_md": {}
+  },
+  {
+    "name": "ui-designer",
+    "category": "design",
+    "description": "Use this agent when you need to design user interfaces, create UI components, or improve visual design. Call this agent when building new features, redesigning existing interfaces, or creating design systems and component libraries.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/ui-designer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "user-story-writer",
+    "category": "product",
+    "description": "Use this agent when you need to write user stories, acceptance criteria, or translate business requirements into development tasks. Call this agent when planning features, breaking down epics, or creating backlog items for development teams.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/product/user-story-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "ux-reviewer",
+    "category": "product",
+    "description": "Use this agent when you need to review user experience designs, analyze user interfaces, or improve usability. Call this agent when evaluating mockups, analyzing user flows, or identifying UX issues in existing interfaces.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/product/ux-reviewer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "wireframe-creator",
+    "category": "design",
+    "description": "Use this agent when you need to create wireframes, plan user flows, or design low-fidelity prototypes. Call this agent when planning new features, mapping user journeys, or organizing content structure before visual design.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/design/wireframe-creator.md",
+    "agents_md": {}
+  }
+]

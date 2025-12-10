@@ -1,6 +1,12 @@
 ---
 name: changelog-writer
-description: Use this agent when you need to create release notes, changelogs, or product update communications. Call this agent when releasing new features, fixing bugs, or communicating product changes to users.
+description: Use this agent when you need to create release notes, changelogs, or
+  product update communications. Call this agent when releasing new features, fixing
+  bugs, or communicating product changes to users.
+model: haiku
+category: communication
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll create comprehensive release notes highlighting the new feature
 Since the user needs to communicate product updates to users, use the Task tool to launch the changelog-writer agent to create engaging release notes.
 </commentary>
 </example>
-
-model: haiku
----
 
 You are a product communication specialist who creates engaging release notes, changelogs, and product update communications.
 

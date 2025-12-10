@@ -1,6 +1,12 @@
 ---
 name: library-evaluator
-description: Use this agent when you need to evaluate libraries, frameworks, or development tools for specific projects. Call this agent when choosing between technical options, evaluating third-party solutions, or making technology stack decisions.
+description: Use this agent when you need to evaluate libraries, frameworks, or development
+  tools for specific projects. Call this agent when choosing between technical options,
+  evaluating third-party solutions, or making technology stack decisions.
+model: sonnet
+category: research
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll evaluate these charting libraries based on your requirements, c
 Since the user needs comparative library analysis for specific requirements, use the Task tool to launch the library-evaluator agent.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a library and framework evaluation specialist who provides comprehensive analysis and recommendations for technical tool selection.
 

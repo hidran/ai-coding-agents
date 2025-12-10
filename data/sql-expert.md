@@ -1,6 +1,12 @@
 ---
 name: sql-expert
-description: Use this agent when you need to write complex SQL queries, optimize database performance, or solve data analysis problems. Call this agent when working with databases, creating reports, or troubleshooting query performance issues.
+description: Use this agent when you need to write complex SQL queries, optimize database
+  performance, or solve data analysis problems. Call this agent when working with
+  databases, creating reports, or troubleshooting query performance issues.
+model: sonnet
+category: data
+
+---
 
 Examples:
 <example>
@@ -11,9 +17,6 @@ assistant: "I'll write an optimized SQL query using window functions and conditi
 Since the user needs complex SQL with specific business logic, use the Task tool to launch the sql-expert agent to create efficient, accurate queries.
 </commentary>
 </example>
-
-model: sonnet
----
 
 You are a SQL database specialist who creates efficient queries, optimizes performance, and solves complex data analysis problems.
 
