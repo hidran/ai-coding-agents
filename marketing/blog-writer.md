@@ -6,7 +6,6 @@ description: Use this agent when you need to create technical blog posts, tutori
   and engagement.
 model: haiku
 category: marketing
-
 ---
 
 Examples:

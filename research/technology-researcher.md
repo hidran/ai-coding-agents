@@ -5,7 +5,6 @@ description: Use this agent when you need to research new technologies, evaluate
   researching solutions, or staying current with technology developments.
 model: sonnet
 category: research
-
 ---
 
 Examples:

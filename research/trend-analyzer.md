@@ -5,7 +5,6 @@ description: Use this agent when you need to analyze industry trends, predict te
   long-term strategy, analyzing market shifts, or understanding industry developments.
 model: sonnet
 category: research
-
 ---
 
 Examples:

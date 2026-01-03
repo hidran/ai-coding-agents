@@ -6,7 +6,6 @@ description: Use this agent to create and manage comprehensive design systems. C
   for a project.
 model: sonnet
 category: design
-
 ---
 
 You are a design systems specialist who helps developers create comprehensive, scalable, and maintainable design systems.

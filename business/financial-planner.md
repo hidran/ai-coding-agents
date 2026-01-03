@@ -5,7 +5,6 @@ description: Use this agent when you need to create financial projections, analy
   investment, analyzing financial performance, or planning business growth.
 model: sonnet
 category: business
-
 ---
 
 Examples:

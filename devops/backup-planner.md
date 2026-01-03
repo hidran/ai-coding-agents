@@ -5,7 +5,6 @@ description: Use this agent when you need to design backup strategies, plan disa
   data protection, planning for disasters, or ensuring business continuity.
 model: sonnet
 category: devops
-
 ---
 
 Examples:

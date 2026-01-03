@@ -6,7 +6,6 @@ description: Use this agent when you need to design operational dashboards, plan
   data visualization systems.
 model: sonnet
 category: data
-
 ---
 
 Examples:

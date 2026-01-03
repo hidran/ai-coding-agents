@@ -5,7 +5,6 @@ description: Use this agent when you need to create presentations, pitch decks, 
   technical presentations, or stakeholder communications.
 model: haiku
 category: communication
-
 ---
 
 Examples:

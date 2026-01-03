@@ -5,7 +5,6 @@ description: Use this agent when you need to create internal team communications
   updates, project communications, or internal company messaging.
 model: haiku
 category: communication
-
 ---
 
 Examples:

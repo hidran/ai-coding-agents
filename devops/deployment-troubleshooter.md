@@ -5,7 +5,6 @@ description: Use this agent when you need to fix deployment issues, resolve CI/C
   fail, when experiencing environment issues, or when setting up deployment pipelines.
 model: sonnet
 category: devops
-
 ---
 
 Examples:

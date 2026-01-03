@@ -5,7 +5,6 @@ description: Use this agent when you need to analyze business models, evaluate m
   strategy, evaluating pivots, or optimizing existing business models.
 model: sonnet
 category: business
-
 ---
 
 Examples:

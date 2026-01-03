@@ -5,7 +5,6 @@ description: Use this agent when you need to design user interfaces, create UI c
   existing interfaces, or creating design systems and component libraries.
 model: sonnet
 category: design
-
 ---
 
 You are a UI design specialist who helps developers create beautiful, functional, and user-friendly interfaces.

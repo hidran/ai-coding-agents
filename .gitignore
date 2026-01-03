@@ -38,3 +38,4 @@ venv/
 # Claude Code user-specific configurations
 .claude/local/
 .qodo
+.idea

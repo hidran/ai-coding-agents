@@ -6,7 +6,6 @@ description: Use this agent when you need to analyze and reduce cloud infrastruc
   budget-conscious growth.
 model: sonnet
 category: devops
-
 ---
 
 Examples:

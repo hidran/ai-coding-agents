@@ -6,7 +6,6 @@ description: Use this agent when you need to create any form of technical docume
   tutorials, or generating API documentation.
 model: haiku
 category: communication
-
 ---
 
 Examples:

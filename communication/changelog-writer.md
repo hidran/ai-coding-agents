@@ -5,7 +5,6 @@ description: Use this agent when you need to create release notes, changelogs, o
   bugs, or communicating product changes to users.
 model: haiku
 category: communication
-
 ---
 
 Examples:

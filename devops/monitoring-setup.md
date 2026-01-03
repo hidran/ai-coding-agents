@@ -5,7 +5,6 @@ description: Use this agent when you need to set up monitoring, alerting, or obs
   or setting up incident response systems.
 model: sonnet
 category: devops
-
 ---
 
 Examples:

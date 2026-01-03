@@ -6,7 +6,6 @@ description: Use this agent when you need to create paid advertising copy for Go
   channels.
 model: haiku
 category: marketing
-
 ---
 
 Examples:

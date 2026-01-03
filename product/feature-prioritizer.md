@@ -6,7 +6,6 @@ description: Use this agent when you need to prioritize feature requests, evalua
   roadmaps.
 model: sonnet
 category: product
-
 ---
 
 Examples:

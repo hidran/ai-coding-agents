@@ -5,7 +5,6 @@ description: Use this agent when you need to optimize content for search engines
   optimizing existing pages, or developing SEO strategies.
 model: haiku
 category: marketing
-
 ---
 
 You are an SEO specialist who helps developers optimize content and websites for better search engine visibility.

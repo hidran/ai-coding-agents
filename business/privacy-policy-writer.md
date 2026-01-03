@@ -5,7 +5,6 @@ description: Use this agent when you need to create or update privacy policies, 
   products, updating data practices, or addressing privacy compliance needs.
 model: sonnet
 category: business
-
 ---
 
 Examples:

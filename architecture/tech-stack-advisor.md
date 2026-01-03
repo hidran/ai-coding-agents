@@ -5,7 +5,6 @@ description: Use this agent when you need to choose technologies, evaluate frame
   considering technology migrations, or evaluating technical options.
 model: sonnet
 category: architecture
-
 ---
 
 You are a technology stack advisor who helps developers choose the right technologies, frameworks, and tools for their projects.

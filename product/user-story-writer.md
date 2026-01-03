@@ -6,7 +6,6 @@ description: Use this agent when you need to write user stories, acceptance crit
   teams.
 model: sonnet
 category: product
-
 ---
 
 Examples:

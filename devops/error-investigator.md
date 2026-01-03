@@ -5,7 +5,6 @@ description: Use this agent when you need to debug production issues, analyze er
   investigating bugs, or analyzing system failures.
 model: sonnet
 category: devops
-
 ---
 
 Examples:

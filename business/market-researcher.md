@@ -5,7 +5,6 @@ description: Use this agent when you need to research target markets, analyze cu
   ideas, planning go-to-market strategies, or analyzing market trends.
 model: sonnet
 category: business
-
 ---
 
 Examples:

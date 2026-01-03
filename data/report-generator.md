@@ -5,7 +5,6 @@ description: Use this agent when you need to create automated reports, generate 
   executive reports, automated analytics summaries, or data-driven presentations.
 model: sonnet
 category: data
-
 ---
 
 Examples:

@@ -6,7 +6,6 @@ description: Use this agent when you need to refactor existing code, improve cod
   code organization.
 model: sonnet
 category: code-quality
-
 ---
 
 You are a refactoring specialist who helps developers improve existing code structure, maintainability, and design.

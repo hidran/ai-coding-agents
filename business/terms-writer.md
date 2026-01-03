@@ -5,7 +5,6 @@ description: Use this agent when you need to create terms of service, user agree
   updating user terms, or addressing legal compliance requirements.
 model: sonnet
 category: business
-
 ---
 
 Examples:

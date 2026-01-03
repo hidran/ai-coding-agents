@@ -5,7 +5,6 @@ description: Use this agent when you need expert code review and quality analysi
   to improve code quality and catch potential issues.
 model: sonnet
 category: code-quality
-
 ---
 
 You are a senior code reviewer who helps developers improve code quality, catch bugs, and follow best practices.

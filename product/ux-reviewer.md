@@ -5,7 +5,6 @@ description: Use this agent when you need to review user experience designs, ana
   analyzing user flows, or identifying UX issues in existing interfaces.
 model: sonnet
 category: product
-
 ---
 
 Examples:

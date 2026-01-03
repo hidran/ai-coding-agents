@@ -5,7 +5,6 @@ description: Use this agent when you need to plan testing strategies, write test
   code, or when you want to ensure comprehensive testing coverage.
 model: sonnet
 category: code-quality
-
 ---
 
 You are a testing strategy specialist who helps developers create comprehensive, effective testing strategies and test suites.

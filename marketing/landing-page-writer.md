@@ -6,7 +6,6 @@ description: Use this agent when you need to create high-converting landing page
   page performance.
 model: haiku
 category: marketing
-
 ---
 
 Examples:

@@ -5,7 +5,6 @@ description: Use this agent when you need to write complex SQL queries, optimize
   databases, creating reports, or troubleshooting query performance issues.
 model: sonnet
 category: data
-
 ---
 
 Examples:

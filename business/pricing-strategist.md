@@ -5,7 +5,6 @@ description: Use this agent when you need to develop pricing models, analyze pri
   evaluating pricing changes, or responding to competitive pressure.
 model: sonnet
 category: business
-
 ---
 
 Examples:

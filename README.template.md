@@ -10,7 +10,7 @@
 
 **Your new AI-powered development squad is here!** 🚀
 
-Meet 52 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
+Meet 59 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
 
 ## 🚀 Quick Start
 
@@ -24,17 +24,25 @@ cd claude-code-agents
 ```
 
 ### 2. Run the Installer
-Execute the `install.sh` script. This script now automates the entire process.
+Execute the `scripts/install.sh` script. This script now automates the entire process and supports multiple AI platforms.
+
 ```bash
-./install.sh
+# For Claude Code agents (default)
+./scripts/install.sh --platform=claude
+
+# For Gemini agents
+./scripts/install.sh --platform=gemini
+
+# You can also omit --platform, and it will default to 'claude'
+./scripts/install.sh
 ```
-This will build and validate all the agents, and copy the complete, verified set into the `~/.claude/agents` directory.
+This will build and validate all the agents, and copy the complete, verified set into the `./.claude/agents` directory (or equivalent in your current working directory).
 
 ### 3. Restart and Use
 Restart your IDE or code editor where you use Claude Code. The new agents will now be available for use.
 
 ### Usage
-Once installed, it's like having 52 AI specialists on speed dial! 📞
+Once installed, it's like having 59 AI specialists on speed dial! 📞
 
 - **🎯 Automatic Delegation**: Claude Code automatically calls in the right expert for your task.
 - **🗣️ Explicit Invocation**: "Hey `code-reviewer`, check this function!" - just ask for any agent by name.

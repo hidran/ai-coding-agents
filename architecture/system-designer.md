@@ -6,7 +6,6 @@ description: Use this agent when you need to design system architecture, plan te
   and integration problems.
 model: sonnet
 category: architecture
-
 ---
 
 Examples:

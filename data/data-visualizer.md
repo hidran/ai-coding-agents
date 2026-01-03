@@ -5,7 +5,6 @@ description: Use this agent when you need to create charts, graphs, or visual re
   data visualization dashboards.
 model: sonnet
 category: data
-
 ---
 
 Examples:

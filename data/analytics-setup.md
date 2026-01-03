@@ -6,7 +6,6 @@ description: Use this agent when you need to implement analytics tracking, set u
   decision systems.
 model: sonnet
 category: data
-
 ---
 
 Examples:

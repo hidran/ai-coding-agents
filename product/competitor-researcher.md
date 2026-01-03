@@ -6,7 +6,6 @@ description: Use this agent when you need to analyze competitors, research marke
   threats.
 model: sonnet
 category: product
-
 ---
 
 Examples:

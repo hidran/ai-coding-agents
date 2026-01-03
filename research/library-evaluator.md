@@ -5,7 +5,6 @@ description: Use this agent when you need to evaluate libraries, frameworks, or 
   evaluating third-party solutions, or making technology stack decisions.
 model: sonnet
 category: research
-
 ---
 
 Examples:

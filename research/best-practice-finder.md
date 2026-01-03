@@ -5,7 +5,6 @@ description: Use this agent when you need to research industry best practices, d
   improving existing systems, or ensuring adherence to industry standards.
 model: sonnet
 category: research
-
 ---
 
 Examples:
