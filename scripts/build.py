@@ -182,7 +182,7 @@ def _process_agents_for_platform(source_dir: Path, dist_dir: Path, target_platfo
                     'model': frontmatter['model'],
                     'tags': frontmatter.get('tags', []),
                     'workflow': frontmatter.get('workflow', []),
-                    'file_path': f"agents/{category}/{agent_file.name}",
+                    'file_path': f"{category}/{agent_file.name}",
                     'agents_md': frontmatter.get('agents_md', {}) # Extract agents_md block
                 }
                 all_agents_data.append(agent_data)
