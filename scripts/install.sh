@@ -21,6 +21,11 @@ VENV_DIR="$CLAUDES_CODE_AGENTS_ROOT/venv"
 REQUIREMENTS_FILE="$CLAUDES_CODE_AGENTS_ROOT/requirements.txt"
 
 # Parse arguments
+if [ -n "$1" ] && [[ "$1" != --* ]]; then
+    PLATFORM="$1"
+    shift
+fi
+
 for arg in "$@"; do
   case $arg in
     --platform=*)
@@ -40,6 +45,7 @@ DIST_AGENTS_DIR="${DIST_DIR}/${PLATFORM}_agents"
 echo "--- AI Agents Installer ---"
 echo "Target Platform: $PLATFORM"
 echo "Installation Directory: $AGENT_DIR"
+
 
 # --- 1. Setup Python Environment ---
 if ! command -v python3 &> /dev/null; then
