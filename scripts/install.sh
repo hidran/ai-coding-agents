@@ -17,6 +17,8 @@ RELEASE_ARCHIVE="agents.tar.gz"
 
 # Default platform
 PLATFORM="claude"
+VENV_DIR="$CLAUDES_CODE_AGENTS_ROOT/venv"
+REQUIREMENTS_FILE="$CLAUDES_CODE_AGENTS_ROOT/requirements.txt"
 
 # Parse arguments
 for arg in "$@"; do
@@ -39,10 +41,30 @@ echo "--- AI Agents Installer ---"
 echo "Target Platform: $PLATFORM"
 echo "Installation Directory: $AGENT_DIR"
 
-# --- 1. Run build script to ensure dist is up-to-date ---
+# --- 1. Setup Python Environment ---
+if ! command -v python3 &> /dev/null; then
+    echo "Error: python3 could not be found."
+    exit 1
+fi
+
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Creating virtual environment at $VENV_DIR..."
+    python3 -m venv "$VENV_DIR"
+fi
+
+if [ -f "$REQUIREMENTS_FILE" ]; then
+    # Quietly install requirements to avoid cluttering output unless there's an error
+    "$VENV_DIR/bin/pip" install -q -r "$REQUIREMENTS_FILE"
+    if [ $? -ne 0 ]; then
+        echo "Warning: Failed to install requirements via pip. Build might fail."
+    fi
+fi
+
+# --- 2. Run build script to ensure dist is up-to-date ---
 if [ -f "$BUILD_SCRIPT" ]; then
     echo "Running build script to generate artifacts for $PLATFORM..."
-    "$BUILD_SCRIPT" --platform="$PLATFORM"
+    # Use the venv python to run the script
+    "$VENV_DIR/bin/python3" "$BUILD_SCRIPT" --platform="$PLATFORM"
     if [ $? -ne 0 ]; then
         echo "Build failed. Aborting installation."
         exit 1
@@ -79,4 +101,4 @@ rm "$RELEASE_ARCHIVE"
 echo ""
 echo "✅ Installation complete!"
 echo "   ${AGENT_DIR} now contains the latest agent definitions for ${PLATFORM}."
-echo "   Please restart your IDE for Claude Code (or relevant AI system) to recognize the new agents."
+echo "   Please restart your IDE for The AI Coding Agent (or relevant AI system) to recognize the new agents."

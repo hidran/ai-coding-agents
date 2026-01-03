@@ -78,7 +78,7 @@ def parse_arguments():
 
 def main():
     """
-    Build script for the Claude Code Agents project.
+    Build script for the Ai Coding Agents project.
     """
     args = parse_arguments()
     target_platform = args.platform
