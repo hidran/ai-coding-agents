@@ -1,9 +1,11 @@
-# Claude Code Agents 🤖
+# AI Agents 🤖
 
 <div align="center">
   <img src="https://vizra.ai/img/vizra-logo.svg" alt="Vizra" width="120" style="margin-bottom: 20px;">
   
-  **Created by the team behind [Vizra-ADK](https://github.com/vizra-ai/vizra-adk) - The Laravel AI Agent Framework**
+  Forked and maintained by [hidran](https://github.com/hidran)
+  
+  <small>Based on the original project by [Vizra-AI](https://github.com/vizra-ai/claude-code-agents)</small>
 </div>
 
 ---
@@ -19,7 +21,7 @@ The installation process is now simpler and more reliable. You no longer need to
 ### 1. Clone the Repository
 If you haven't already, clone the project to your local machine:
 ```bash
-git clone https://github.com/vizra-ai/claude-code-agents.git
+git clone https://github.com/hidran/claude-code-agents.git
 cd claude-code-agents
 ```
 
@@ -209,30 +211,10 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 🤖 Building AI Agents in Laravel?
-
-<div align="center">
-  <img src="https://vizra.ai/img/vizra-logo.svg" alt="Vizra" width="100" style="margin: 20px 0;">
-  
-  **Love these Claude Code templates? Ready to build actual AI agents in your Laravel apps?**
-  
-  Check out **[Vizra-ADK](https://github.com/vizra-ai/vizra-adk)** - the Laravel AI Agent Framework!
-  
-  ✨ **Multi-model AI support** (OpenAI, Anthropic, Google Gemini)  
-  🧠 **Sub-agent delegation** and **persistent memory**  
-  🛠️ **Extensible tool system** for database & API interactions  
-  ⚡ **Real-time streaming** and **comprehensive tracing**  
-  
-  [**Get Started with Vizra-ADK →**](https://github.com/vizra-ai/vizra-adk)
-</div>
-
----
-
 ## 🔗 Links
 
 - [Claude Code Documentation](https://docs.anthropic.com/claude-code)
-- [Report Issues](https://github.com/vizra-ai/claude-code-agents/issues)
-- [Submit Improvements](https://github.com/vizra-ai/claude-code-agents/pulls)
+
 
 ---
 
