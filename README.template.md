@@ -14,7 +14,23 @@
 
 Meet 59 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
 
-## 🚀 Quick Start
+## 🚀 Quick Install (One-Liner)
+
+You can install the agents directly into your current project without manually cloning the repository:
+
+```bash
+# For Claude (default)
+bash -c 'D=$(mktemp -d); git clone --depth 1 https://github.com/hidran/ai-coding-agents.git "$D" -q; "$D/scripts/install.sh" "$@"; rm -rf "$D"'
+
+# For Gemini
+bash -c 'D=$(mktemp -d); git clone --depth 1 https://github.com/hidran/ai-coding-agents.git "$D" -q; "$D/scripts/install.sh" "$@"; rm -rf "$D"' -- gemini
+
+# For Codex
+bash -c 'D=$(mktemp -d); git clone --depth 1 https://github.com/hidran/ai-coding-agents.git "$D" -q; "$D/scripts/install.sh" "$@"; rm -rf "$D"' -- codex
+```
+
+## 🚀 Quick Start (Manual)
+
 
 The installation process is now simpler and more reliable. You no longer need to manually copy individual files.
 
