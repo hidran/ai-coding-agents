@@ -22,7 +22,7 @@ def generate_readme(root_dir: Path, all_agents_data: list):
     # Define the desired order of categories
     category_order = [
         "architecture", "code-quality", "design", "marketing", "product", 
-        "business", "devops", "data", "communication", "research"
+        "business", "devops", "data", "communication", "research", "project-management"
     ]
     
     # Descriptions for each category
@@ -36,7 +36,8 @@ def generate_readme(root_dir: Path, all_agents_data: list):
         "devops": "The infrastructure heroes who keep your app running while you sleep",
         "data": "The number crunchers who turn chaos into insights",
         "communication": "The translators who make tech speak human",
-        "research": "The curious minds who keep you ahead of the curve"
+        "research": "The curious minds who keep you ahead of the curve",
+        "project-management": "The organizers who ensure on-time and on-budget delivery"
     }
 
     md_parts = ["## 🤖 Your AI Dream Team\n\n*Meet your new coding sidekicks - each one a specialist in their field:*"]

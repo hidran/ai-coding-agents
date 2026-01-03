@@ -12,7 +12,7 @@
 
 **Your new AI-powered development squad is here!** 🚀
 
-Meet 59 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
+Meet 61 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
 
 ## 🚀 Quick Start
 
@@ -44,7 +44,7 @@ This will build and validate all the agents, and copy the complete, verified set
 Restart your IDE or code editor where you use Claude Code. The new agents will now be available for use.
 
 ### Usage
-Once installed, it's like having 59 AI specialists on speed dial! 📞
+Once installed, it's like having 61 AI specialists on speed dial! 📞
 
 - **🎯 Automatic Delegation**: Claude Code automatically calls in the right expert for your task.
 - **🗣️ Explicit Invocation**: "Hey `code-reviewer`, check this function!" - just ask for any agent by name.
@@ -144,6 +144,11 @@ Once installed, it's like having 59 AI specialists on speed dial! 📞
 - **solution-architect** - A specialist in solution architect.
 - **technology-researcher** - A specialist in technology researcher.
 - **trend-analyzer** - A specialist in trend analyzer.
+
+### 🏗️ Project-management (2 agents)
+*The organizers who ensure on-time and on-budget delivery*
+- **agile-coach** - A specialist in agile coach.
+- **project-planner** - A specialist in project planner.
 
 ## 🎯 What Makes These Agents Special
 

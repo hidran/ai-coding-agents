@@ -20,6 +20,16 @@
     "agents_md": {}
   },
   {
+    "name": "agile-coach",
+    "category": "project-management",
+    "description": "Use this agent when you need help with Agile methodologies, Sprint planning, Retrospectives, or improving team processes. Call this agent to resolve team friction, optimize workflows, or facilitate ceremonies.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/project-management/agile-coach.md",
+    "agents_md": {}
+  },
+  {
     "name": "analytics-setup",
     "category": "data",
     "description": "Use this agent when you need to implement analytics tracking, set up measurement systems, or create data collection strategies. Call this agent when setting up product analytics, tracking user behavior, or implementing data-driven decision systems.",
@@ -401,6 +411,16 @@
     "tags": [],
     "workflow": [],
     "file_path": "agents/business/privacy-policy-writer.md",
+    "agents_md": {}
+  },
+  {
+    "name": "project-planner",
+    "category": "project-management",
+    "description": "Use this agent when you need to break down large initiatives into tasks, create roadmaps, or manage project timelines. Call this agent when starting a new epic, estimating effort, or organizing a backlog.",
+    "model": "sonnet",
+    "tags": [],
+    "workflow": [],
+    "file_path": "agents/project-management/project-planner.md",
     "agents_md": {}
   },
   {
