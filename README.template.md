@@ -21,8 +21,8 @@ The installation process is now simpler and more reliable. You no longer need to
 ### 1. Clone the Repository
 If you haven't already, clone the project to your local machine:
 ```bash
-git clone https://github.com/hidran/claude-code-agents.git
-cd claude-code-agents
+git clone https://github.com/hidran/ai-coding-agents.git
+cd ai-coding-agents
 ```
 
 ### 2. Run the Installer
