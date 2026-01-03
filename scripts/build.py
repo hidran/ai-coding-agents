@@ -131,7 +131,7 @@ def _process_agents_for_platform(source_dir: Path, dist_dir: Path, target_platfo
     errors = []
 
     frontmatter_re = re.compile(r'---\s*\n(.*?)\n---\s*\n', re.DOTALL)
-    categories = [d.name for d in source_dir.iterdir() if d.is_dir() and not d.name.startswith('.')]
+    categories = [d.name for d in source_dir.iterdir() if d.is_dir() and not d.name.startswith('.') and d.name not in ['dist', 'scripts', 'venv', '__pycache__', '.git', '.idea']]
 
     gemini_agents_content = []
     if target_platform == "gemini":
