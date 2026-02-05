@@ -39,3 +39,7 @@ venv/
 .claude/local/
 .qodo
 .idea
+.dist
+.claude
+.gemini
+.codex

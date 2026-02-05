@@ -188,8 +188,11 @@ def _process_agents_for_platform(source_dir: Path, dist_dir: Path, target_platfo
                 all_agents_data.append(agent_data)
                 
                 # --- Platform-specific artifact generation ---
+                # Always copy the source markdown file for reference
+                shutil.copy(agent_file, dist_category_path / agent_file.name)
+
                 if target_platform == "claude":
-                    shutil.copy(agent_file, dist_category_path / agent_file.name)
+                    pass # Already copied above
                 elif target_platform == "gemini":
                     # Generate Python definition for Gemini
                     gemini_agents_content.append(f"class {frontmatter['name'].replace('-', '_').title()}Agent:\n")
