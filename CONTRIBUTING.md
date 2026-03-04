@@ -117,14 +117,17 @@ This is the most important new step. After making your changes, run the build sc
 ```bash
 ./scripts/build.py
 ```
-- **If it succeeds:** The script will automatically validate your agent's format, update the `dist/agents.json` manifest, and regenerate the main `docs/README.md`.
+- **If it succeeds:** The script will automatically validate your agent's format, update the `dist/agents.json` manifest, and regenerate the main `README.md`.
 - **If it fails:** The script will print an error telling you exactly what is wrong (e.g., "Missing required field: description"). You must fix the error and run the script again until it succeeds.
 
 ### 4. Test Your Agent Locally
 Use the `install.sh` script to install your locally modified and validated agents.
 ```bash
-# Install your agents locally
-./install.sh
+# Install all agents for a platform
+./install.sh --platform=claude
+
+# Install agents for specific frameworks
+./install.sh --platform=claude --frameworks=react,nextjs
 
 # Test in Claude Code
 # Restart your IDE and test your agent with various scenarios.
@@ -132,7 +135,7 @@ Use the `install.sh` script to install your locally modified and validated agent
 
 ### 5. Commit and Submit a Pull Request
 - Commit **all** the files that were modified by you and by the build script. This includes:
-    - Your new or edited agent file (e.g., `docs/code-quality/my-new-agent.md`).
+    - Your new or edited agent file (e.g., `code-quality/my-new-agent.md`).
     - The updated `dist/agents.json`.
     - The updated `README.md`.
 - Push your changes and open a pull request. The maintainers can see that the build script has already validated your contribution, which will speed up the review process.
@@ -150,6 +153,7 @@ Use the `install.sh` script to install your locally modified and validated agent
 - **data** - Analytics, SQL, reporting
 - **communication** - Documentation, support, presentations  
 - **research** - Technology research and analysis
+- **skills** - Repeatable workflows and generators
 
 ### Suggesting New Categories:
 - Create an issue explaining the need for a new category

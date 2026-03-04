@@ -43,3 +43,4 @@ venv/
 .claude
 .gemini
 .codex
+dist/

@@ -17,33 +17,42 @@ RELEASE_ARCHIVE="agents.tar.gz"
 
 # Default platform
 PLATFORM="claude"
+FRAMEWORKS=""
 VENV_DIR="$CLAUDES_CODE_AGENTS_ROOT/venv"
 REQUIREMENTS_FILE="$CLAUDES_CODE_AGENTS_ROOT/requirements.txt"
 
 # Parse arguments
-if [ -n "$1" ] && [[ "$1" != --* ]]; then
-    PLATFORM="$1"
-    shift
-fi
-
 for arg in "$@"; do
   case $arg in
     --platform=*)
       PLATFORM="${arg#*=}"
-      shift # Remove --platform= from processing
+      ;;
+    --frameworks=*)
+      FRAMEWORKS="${arg#*=}"
       ;;
     *)
-      # Unknown option or argument
+      # Assume first non-flag argument is platform if not set
+      if [[ "$arg" != --* ]] && [ -z "$PLATFORM_SET" ]; then
+          PLATFORM="$arg"
+          PLATFORM_SET=true
+      fi
       ;;
   esac
 done
 
-AGENT_DIR="$(pwd)/.${PLATFORM}/agents"
-DIST_AGENTS_DIR="${DIST_DIR}/${PLATFORM}_agents"
+# Install to .{platform} directory (e.g., .claude, .gemini)
+AGENT_DIR="$(pwd)/.${PLATFORM}"
+
+DIST_AGENTS_DIR="${DIST_DIR}/.${PLATFORM}"
 
 
 echo "--- AI Agents Installer ---"
 echo "Target Platform: $PLATFORM"
+if [ -n "$FRAMEWORKS" ]; then
+    echo "Selected Frameworks: $FRAMEWORKS"
+else
+    echo "Selected Frameworks: All"
+fi
 echo "Installation Directory: $AGENT_DIR"
 
 
@@ -89,7 +98,45 @@ fi
 
 # --- 3. Create a local release artifact from the dist directory ---
 echo "Creating local release artifact: $RELEASE_ARCHIVE from $DIST_AGENTS_DIR..."
-tar -czf "$RELEASE_ARCHIVE" -C "$DIST_AGENTS_DIR" .
+
+# If frameworks are specified, we need to filter what we package
+if [ -n "$FRAMEWORKS" ]; then
+    # Create a temporary directory for filtering
+    TEMP_DIST_DIR=$(mktemp -d)
+
+    # Copy base directories (agents, rules)
+    cp -r "$DIST_AGENTS_DIR/agents" "$TEMP_DIST_DIR/" 2>/dev/null || true
+    cp -r "$DIST_AGENTS_DIR/rules" "$TEMP_DIST_DIR/" 2>/dev/null || true
+
+    # Handle skills specially
+    mkdir -p "$TEMP_DIST_DIR/skills"
+
+    # Convert comma-separated string to array
+    IFS=',' read -ra ADDR <<< "$FRAMEWORKS"
+    for framework in "${ADDR[@]}"; do
+        # Trim whitespace
+        framework=$(echo "$framework" | xargs)
+
+        # Copy matching skills
+        # We look for skills that match the framework name in their path or filename
+        # This assumes skills are organized like skills/react/component.md or skills/react-component.md
+
+        # Find skills in the source dist that match the framework
+        # Note: This is a simple match. Adjust logic if structure is complex.
+        find "$DIST_AGENTS_DIR/skills" -name "*${framework}*" -exec cp -r {} "$TEMP_DIST_DIR/skills/" \;
+    done
+
+    # Also copy CLAUDE.md (or equivalent)
+    cp "$DIST_AGENTS_DIR"/*.md "$TEMP_DIST_DIR/" 2>/dev/null || true
+
+    # Create archive from temp dir
+    tar -czf "$RELEASE_ARCHIVE" -C "$TEMP_DIST_DIR" .
+    rm -rf "$TEMP_DIST_DIR"
+else
+    # Package everything
+    tar -czf "$RELEASE_ARCHIVE" -C "$DIST_AGENTS_DIR" .
+fi
+
 
 # --- 4. Install the agents ---
 echo "Installing agents to $AGENT_DIR..."
