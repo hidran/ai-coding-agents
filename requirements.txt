@@ -1,1 +1,6 @@
+# Python dependencies for build script (scripts/build.py)
 pyyaml
+questionary
+
+# OR use Node.js version (scripts/build.js):
+# npm install

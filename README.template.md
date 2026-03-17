@@ -41,29 +41,62 @@ git clone https://github.com/hidran/ai-coding-agents.git
 cd ai-coding-agents
 ```
 
-### 2. Run the Installer
-Execute the `scripts/install.sh` script. This script now automates the entire process and supports multiple AI platforms.
+### 2. Install Dependencies
+
+Choose your preferred build system:
+
+**Option A: Node.js (Recommended)**
+```bash
+npm install
+```
+
+**Option B: Python**
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+### 3. Build & Install
+
+The installer supports multiple AI platforms and skill selection options:
 
 ```bash
-# For Claude Code agents (default)
-./scripts/install.sh --platform=claude
+# Build and install all skills
+./scripts/install.sh --all
 
-# For Gemini agents
-./scripts/install.sh --platform=gemini
+# Build and install specific skills only
+./scripts/install.sh --skills=api-designer,code-reviewer,ui-designer
 
-# You can also omit --platform, and it will default to 'claude'
+# Interactive skill selection (with checkbox UI)
 ./scripts/install.sh
+
+# For Gemini or Codex platforms
+./scripts/install.sh --all --platform=gemini
 ```
-This will build and validate all the agents, and copy the complete, verified set into the `./.claude/agents` directory (or equivalent in your current working directory).
+
+Or use the build script directly:
+
+```bash
+# Using Node.js
+npm run build:all           # Build all skills
+npm run build:list          # List available skills
+node scripts/build.js --skills=api-designer,code-reviewer
+
+# Using Python
+python3 scripts/build.py --all
+python3 scripts/build.py --list
+python3 scripts/build.py --skills=api-designer,code-reviewer
+```
+
+This will build and validate the skills, and copy them into the `./.claude/skills` directory (or equivalent for your platform).
 
 ### 3. Restart and Use
 Restart your IDE or code editor where you use Claude Code. The new agents will now be available for use.
 
 ### Usage
-Once installed, it's like having 59 AI specialists on speed dial! 📞
+Once installed, it's like having your own AI specialists on speed dial! 📞
 
-- **🎯 Automatic Delegation**: Claude Code automatically calls in the right expert for your task.
-- **🗣️ Explicit Invocation**: "Hey `code-reviewer`, check this function!" - just ask for any agent by name.
+- **🎯 Automatic Delegation**: Claude Code automatically calls in the right skill for your task.
+- **🗣️ Explicit Invocation**: "Hey `code-reviewer`, check this function!" - just ask for any skill by name.
 - **🧠 Context-Aware**: Your AI team collaborates seamlessly on complex multi-step projects.
 
 📚 **New to Claude Code agents?** Check out the [official documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents) to learn how agents work.

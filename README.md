@@ -12,7 +12,7 @@
 
 **Your new AI-powered development squad is here!** 🚀
 
-Meet 61 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
+Meet 65 specialized AI skills that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
 
 ## 🚀 Quick Install (One-Liner)
 
@@ -41,29 +41,62 @@ git clone https://github.com/hidran/ai-coding-agents.git
 cd ai-coding-agents
 ```
 
-### 2. Run the Installer
-Execute the `scripts/install.sh` script. This script now automates the entire process and supports multiple AI platforms.
+### 2. Install Dependencies
+
+Choose your preferred build system:
+
+**Option A: Node.js (Recommended)**
+```bash
+npm install
+```
+
+**Option B: Python**
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+### 3. Build & Install
+
+The installer supports multiple AI platforms and skill selection options:
 
 ```bash
-# For Claude Code agents (default)
-./scripts/install.sh --platform=claude
+# Build and install all skills
+./scripts/install.sh --all
 
-# For Gemini agents
-./scripts/install.sh --platform=gemini
+# Build and install specific skills only
+./scripts/install.sh --skills=api-designer,code-reviewer,ui-designer
 
-# You can also omit --platform, and it will default to 'claude'
+# Interactive skill selection (with checkbox UI)
 ./scripts/install.sh
+
+# For Gemini or Codex platforms
+./scripts/install.sh --all --platform=gemini
 ```
-This will build and validate all the agents, and copy the complete, verified set into the `./.claude/agents` directory (or equivalent in your current working directory).
+
+Or use the build script directly:
+
+```bash
+# Using Node.js
+npm run build:all           # Build all skills
+npm run build:list          # List available skills
+node scripts/build.js --skills=api-designer,code-reviewer
+
+# Using Python
+python3 scripts/build.py --all
+python3 scripts/build.py --list
+python3 scripts/build.py --skills=api-designer,code-reviewer
+```
+
+This will build and validate the skills, and copy them into the `./.claude/skills` directory (or equivalent for your platform).
 
 ### 3. Restart and Use
 Restart your IDE or code editor where you use Claude Code. The new agents will now be available for use.
 
 ### Usage
-Once installed, it's like having 61 AI specialists on speed dial! 📞
+Once installed, it's like having your own AI specialists on speed dial! 📞
 
-- **🎯 Automatic Delegation**: Claude Code automatically calls in the right expert for your task.
-- **🗣️ Explicit Invocation**: "Hey `code-reviewer`, check this function!" - just ask for any agent by name.
+- **🎯 Automatic Delegation**: Claude Code automatically calls in the right skill for your task.
+- **🗣️ Explicit Invocation**: "Hey `code-reviewer`, check this function!" - just ask for any skill by name.
 - **🧠 Context-Aware**: Your AI team collaborates seamlessly on complex multi-step projects.
 
 📚 **New to Claude Code agents?** Check out the [official documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents) to learn how agents work.
@@ -72,99 +105,106 @@ Once installed, it's like having 61 AI specialists on speed dial! 📞
 
 *Meet your new coding sidekicks - each one a specialist in their field:*
 
-### 🏗️ Architecture (5 agents)
+### 🏗️ Architecture (7 skills)
 *The masterminds who design your digital empire*
-- **api-designer** - A specialist in api designer.
-- **database-planner** - A specialist in database planner.
-- **feature-spec-writer** - A specialist in feature spec writer.
-- **system-designer** - A specialist in system designer.
-- **tech-stack-advisor** - A specialist in tech stack advisor.
+- **api-designer** - API Design Specialist for REST APIs, GraphQL schemas, and API interfaces.
+- **api-documenter** - API documentation specialist for developer resources.
+- **database-planner** - Database Architecture Specialist for schema design and optimization.
+- **design-system-builder** - Design systems specialist for comprehensive component libraries.
+- **feature-spec-writer** - Technical Specification Writer for detailed feature documentation.
+- **system-designer** - System & Solution Architect for high-level distributed systems.
+- **tech-stack-advisor** - Technology Stack Advisor for framework and technology decisions.
 
-### 🏗️ Code-quality (6 agents)
+### 🏗️ Code quality (6 skills)
 *The guardians of clean, secure, and blazing-fast code*
-- **code-reviewer** - A specialist in code reviewer.
-- **documentation-writer** - A specialist in documentation writer.
-- **performance-optimizer** - A specialist in performance optimizer.
-- **refactoring-expert** - A specialist in refactoring expert.
-- **security-auditor** - A specialist in security auditor.
-- **test-strategist** - A specialist in test strategist.
+- **code-reviewer** - Senior Code Reviewer for quality analysis and issue detection.
+- **documentation-writer** - Technical Documentation Specialist for code docs and guides.
+- **performance-optimizer** - Performance Optimization Engineer for speed and efficiency.
+- **refactoring-expert** - Refactoring Specialist for code structure improvement.
+- **security-auditor** - Application Security Engineer for vulnerability detection.
+- **test-strategist** - QA Architect for testing strategies and coverage.
 
-### 🏗️ Design (8 agents)
+### 🏗️ Design (9 skills)
 *The creative geniuses who make everything beautiful*
-- **brand-designer** - A specialist in brand designer.
-- **color-specialist** - A specialist in color specialist.
-- **design-system-builder** - A specialist in design system builder.
-- **icon-designer** - A specialist in icon designer.
-- **layout-designer** - A specialist in layout designer.
-- **typography-expert** - A specialist in typography expert.
-- **ui-designer** - A specialist in ui designer.
-- **wireframe-creator** - A specialist in wireframe creator.
+- **brand-designer** - Brand design specialist for identity and visual systems.
+- **brand-guidelines** - Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel.
+- **color-specialist** - Color design specialist for palettes and accessibility.
+- **icon-designer** - Icon design specialist for iconography systems.
+- **layout-designer** - Layout design specialist for responsive grids and page structure.
+- **presentation-builder** - Presentation design specialist for pitch decks and slides.
+- **typography-expert** - Typography specialist for font systems and readability.
+- **ui-designer** - UI design specialist for interfaces and components.
+- **wireframe-creator** - Wireframing specialist for user flows and prototypes.
 
-### 🏗️ Marketing (7 agents)
+### 🏗️ Marketing (8 skills)
 *The word wizards who turn features into must-haves*
-- **ad-copy-creator** - A specialist in ad copy creator.
-- **blog-writer** - A specialist in blog writer.
-- **copywriter** - A specialist in copywriter.
-- **email-writer** - A specialist in email writer.
-- **landing-page-writer** - A specialist in landing page writer.
-- **seo-optimizer** - A specialist in seo optimizer.
-- **social-media-creator** - A specialist in social media creator.
+- **ad-copy-creator** - Paid advertising copywriter for Google Ads, Facebook Ads, LinkedIn Ads.
+- **blog-writer** - Technical content specialist for blog posts and tutorials.
+- **copywriter** - Professional copywriter for marketing copy and product descriptions.
+- **email-writer** - Email marketing specialist for campaigns and sequences.
+- **landing-page-writer** - Landing page copywriting specialist for high-converting sales pages.
+- **seo-optimizer** - SEO specialist for search engine optimization and keyword research.
+- **social-media-creator** - Social media specialist for content and posting strategies.
+- **youtube-downloader** - Download YouTube videos with customizable quality and format options.
 
-### 🏗️ Product (6 agents)
+### 🏗️ Product (6 skills)
 *The user champions who build products people actually want*
-- **accessibility-checker** - A specialist in accessibility checker.
-- **competitor-researcher** - A specialist in competitor researcher.
-- **feature-prioritizer** - A specialist in feature prioritizer.
-- **feedback-analyzer** - A specialist in feedback analyzer.
-- **user-story-writer** - A specialist in user story writer.
-- **ux-reviewer** - A specialist in ux reviewer.
+- **accessibility-checker** - Accessibility compliance specialist for WCAG standards and inclusive design.
+- **competitor-researcher** - Competitive intelligence specialist for market analysis.
+- **feature-prioritizer** - Product strategy specialist for prioritizing features and roadmaps.
+- **feedback-analyzer** - User feedback analysis specialist for extracting insights.
+- **user-story-writer** - Product requirements specialist for user stories and acceptance criteria.
+- **ux-reviewer** - User experience specialist for interface evaluation and usability.
 
-### 🏗️ Business (6 agents)
+### 🏗️ Business (6 skills)
 *The suit-wearing strategists who keep the lights on*
-- **business-model-analyzer** - A specialist in business model analyzer.
-- **financial-planner** - A specialist in financial planner.
-- **market-researcher** - A specialist in market researcher.
-- **pricing-strategist** - A specialist in pricing strategist.
-- **privacy-policy-writer** - A specialist in privacy policy writer.
-- **terms-writer** - A specialist in terms writer.
+- **business-model-analyzer** - Business model specialist for analyzing and optimizing revenue structures.
+- **financial-planner** - Financial planning specialist for projections and analysis.
+- **market-researcher** - Market research specialist for analyzing markets and opportunities.
+- **pricing-strategist** - Pricing strategy specialist for revenue-optimized models.
+- **privacy-policy-writer** - Privacy policy specialist for GDPR-compliant documentation.
+- **terms-writer** - Legal document specialist for terms of service and agreements.
 
-### 🏗️ Devops (5 agents)
+### 🏗️ Devops (5 skills)
 *The infrastructure heroes who keep your app running while you sleep*
-- **backup-planner** - A specialist in backup planner.
-- **cost-optimizer** - A specialist in cost optimizer.
-- **deployment-troubleshooter** - A specialist in deployment troubleshooter.
-- **error-investigator** - A specialist in error investigator.
-- **monitoring-setup** - A specialist in monitoring setup.
+- **backup-planner** - Disaster Recovery and Business Continuity Architect for backup strategies.
+- **cost-optimizer** - FinOps and Cloud Cost Specialist for reducing infrastructure costs.
+- **deployment-troubleshooter** - CI/CD and Infrastructure Reliability Engineer for deployment issues.
+- **error-investigator** - Root Cause Analysis Investigator for production issues.
+- **monitoring-setup** - Observability Engineer for monitoring and alerting systems.
 
-### 🏗️ Data (5 agents)
+### 🏗️ Data (5 skills)
 *The number crunchers who turn chaos into insights*
-- **analytics-setup** - A specialist in analytics setup.
-- **dashboard-planner** - A specialist in dashboard planner.
-- **data-visualizer** - A specialist in data visualizer.
-- **report-generator** - A specialist in report generator.
-- **sql-expert** - A specialist in sql expert.
+- **analytics-setup** - Analytics implementation specialist for tracking and measurement.
+- **dashboard-planner** - Dashboard design specialist for BI and monitoring interfaces.
+- **data-visualizer** - Data visualization specialist for charts and visual representations.
+- **report-generator** - Business reporting specialist for automated reports.
+- **sql-expert** - SQL database specialist for queries and optimization.
 
-### 🏗️ Communication (6 agents)
+### 🏗️ Communication (4 skills)
 *The translators who make tech speak human*
-- **api-documenter** - A specialist in api documenter.
-- **changelog-writer** - A specialist in changelog writer.
-- **presentation-builder** - A specialist in presentation builder.
-- **support-responder** - A specialist in support responder.
-- **team-communicator** - A specialist in team communicator.
-- **technical-writer** - A specialist in technical writer.
+- **changelog-writer** - Product communication specialist for release notes.
+- **support-responder** - Customer support specialist for service communications.
+- **team-communicator** - Internal communications specialist for team updates.
+- **technical-writer** - Technical documentation specialist for comprehensive docs.
 
-### 🏗️ Research (5 agents)
+### 🏗️ Research (6 skills)
 *The curious minds who keep you ahead of the curve*
-- **best-practice-finder** - A specialist in best practice finder.
-- **library-evaluator** - A specialist in library evaluator.
-- **solution-architect** - A specialist in solution architect.
-- **technology-researcher** - A specialist in technology researcher.
-- **trend-analyzer** - A specialist in trend analyzer.
+- **best-practice-finder** - Best practices research specialist for industry standards and proven methodologies.
+- **library-evaluator** - Library and framework evaluation specialist for technical tool selection.
+- **solution-architect** - Solution architecture specialist for complex technical challenges.
+- **technology-researcher** - Technology research specialist for emerging technologies and tools.
+- **trend-analyzer** - Trend analysis specialist for industry trends and market evolution.
+- **typescript-best-practices** - This skill should be used when the user asks to "review TypeScript code", "check my TS code", "review this TypeScript", "write TypeScript", or when writing, reviewing, or refactoring TypeScript code in projects with tsconfig.
 
-### 🏗️ Project-management (2 agents)
+### 🏗️ Project management (2 skills)
 *The organizers who ensure on-time and on-budget delivery*
-- **agile-coach** - A specialist in agile coach.
-- **project-planner** - A specialist in project planner.
+- **agile-coach** - Agile Coach and Scrum Master for methodologies, Sprint planning, Retrospectives.
+- **project-planner** - Technical Project Manager for breaking down initiatives, creating roadmaps, managing timelines.
+
+### 🏗️ Skills (1 skills)
+*Specialized AI skills for common development tasks*
+- **developer-growth-analysis** - Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs.
 
 ## 🎯 What Makes These Agents Special
 
