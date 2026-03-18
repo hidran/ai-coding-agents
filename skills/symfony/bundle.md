@@ -3,7 +3,7 @@ name: symfony-bundle
 description: Generates a Symfony bundle structure or a feature set (Entity, Repository, Controller, Form) within an existing app.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Symfony Feature Generator
@@ -12,6 +12,15 @@ This skill creates a cohesive set of classes for a feature in a Symfony applicat
 
 ## Usage
 Run `/symfony-feature <EntityName>`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Symfony
+2. **Fetch official docs**: Use `WebFetch` on the relevant Symfony documentation page (https://symfony.com/doc/current/) for the feature being generated
+3. **Verify patterns**: Confirm that attributes, dependency injection, and bundle structure are still current
+4. **Use latest patterns**: If Symfony has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Symfony version the code targets
 
 ## Structure
 Generates:

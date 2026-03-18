@@ -3,7 +3,7 @@ name: nestjs-resource
 description: Generates a complete NestJS resource (Module, Controller, Service, DTOs, Entities) following clean architecture principles.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # NestJS Resource Generator
@@ -12,6 +12,15 @@ This skill creates a vertical slice for a feature in a NestJS application.
 
 ## Usage
 Run `/nestjs-resource <ResourceName>`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of NestJS
+2. **Fetch official docs**: Use `WebFetch` on the relevant NestJS documentation page (https://docs.nestjs.com/) for the feature being generated
+3. **Verify patterns**: Confirm that decorators, DI patterns, and module structure are still current
+4. **Use latest patterns**: If NestJS has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which NestJS version the code targets
 
 ## Structure
 Creates `src/<resource-name>/`:

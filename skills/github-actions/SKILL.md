@@ -3,7 +3,7 @@ name: github-actions
 description: Generates CI/CD pipelines for GitHub Actions. Supports Laravel, NestJS, Angular, and React with testing, linting, building, and deployment stages.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # GitHub Actions Pipeline Generator
@@ -13,6 +13,15 @@ This skill generates production-ready CI/CD workflows for GitHub Actions.
 ## Usage
 
 Run `/github-actions <stack>` where stack is: `laravel`, `nestjs`, `angular`, `react`, or `fullstack`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest actions**: Use `WebSearch` to find the current versions of key actions (actions/checkout, actions/setup-node, shivammathur/setup-php, etc.)
+2. **Fetch changelog**: Use `WebFetch` on GitHub Actions marketplace to verify latest action versions
+3. **Verify runner images**: Confirm that `ubuntu-latest` and other runner images are current
+4. **Use latest versions**: Always use the latest stable action versions (e.g., `actions/checkout@v4` not `@v3`)
+5. **Note versions**: Add comments in workflow YAML indicating which action versions are used
 
 ## Structure
 

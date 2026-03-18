@@ -3,7 +3,7 @@ name: docker-compose
 description: Generates Docker Compose development environments for Laravel (PHP, MySQL, Redis, Nginx) and Node.js (Node, PostgreSQL, Redis) stacks with Dockerfiles and configs.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Docker Compose Generator
@@ -13,6 +13,15 @@ This skill generates a complete Docker Compose development environment tailored 
 ## Usage
 
 Run `/docker-compose <stack>` where stack is one of: `laravel`, `node`, `fullstack`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest versions**: Use `WebSearch` to find the current stable versions of Docker Compose, PHP, Node.js, MySQL, PostgreSQL, and Redis
+2. **Fetch official docs**: Use `WebFetch` on Docker Hub or official image pages to verify the latest supported tags
+3. **Verify base images**: Confirm that image tags (e.g., `php:8.3-fpm`, `node:20-alpine`, `mysql:8`) are still current
+4. **Use latest stable**: Always use the latest stable LTS versions for base images, not outdated ones from the examples
+5. **Note versions**: Add comments in docker-compose.yml indicating which versions are being used
 
 ## Structure
 

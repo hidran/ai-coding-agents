@@ -3,7 +3,7 @@ name: react-component
 description: Generates production-ready React components with TypeScript, tests (Vitest/Jest), Storybook stories, and Tailwind CSS.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # React Component Generator
@@ -12,6 +12,15 @@ This skill generates a complete, production-grade React component structure.
 
 ## Usage
 Run `/react-component <ComponentName>`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of React
+2. **Fetch official docs**: Use `WebFetch` on the relevant React documentation page (https://react.dev/) for the feature being generated
+3. **Verify patterns**: Confirm that hooks, component patterns, and testing approaches are still current
+4. **Use latest patterns**: If React has introduced newer or better approaches (e.g., React Server Components, use() hook, React Compiler), prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which React version the code targets
 
 ## Structure
 It will create a folder `src/components/<ComponentName>/` containing:

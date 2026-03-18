@@ -3,7 +3,7 @@ name: nextjs-page
 description: Generates a Next.js 14+ App Router page with metadata, loading state, error handling, and server/client component separation.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Next.js Page Generator
@@ -12,6 +12,15 @@ This skill scaffolds a new route in the Next.js App Router.
 
 ## Usage
 Run `/nextjs-page <path/to/route>` (e.g., `/nextjs-page dashboard/settings`)
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Next.js
+2. **Fetch official docs**: Use `WebFetch` on the relevant Next.js documentation page (https://nextjs.org/docs) for the feature being generated
+3. **Verify patterns**: Confirm that App Router, Server Components, metadata API, and loading/error patterns are still current
+4. **Use latest patterns**: If Next.js has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Next.js version the code targets
 
 ## Structure
 It will create `src/app/<path>/`:

@@ -3,7 +3,7 @@ name: env-setup
 description: Generates environment configuration including .env files, .env.example, Makefile with common commands, and a setup script for developer onboarding.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Environment Setup Generator
@@ -13,6 +13,14 @@ This skill generates environment configuration files and developer onboarding sc
 ## Usage
 
 Run `/env-setup <stack>` where stack is: `laravel`, `node`, `angular`, `fullstack`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check project stack**: Read `composer.json`, `package.json`, or framework config files to detect exact versions in use
+2. **Fetch latest recommendations**: Use `WebSearch` to find current best practices for the detected stack's environment setup
+3. **Verify tool versions**: Confirm that recommended tool versions (.nvmrc, .php-version) match the project's requirements
+4. **Match project conventions**: If the project already has env files or Makefiles, follow their existing conventions
 
 ## Structure
 

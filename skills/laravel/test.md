@@ -3,13 +3,22 @@ name: laravel-test
 description: Generates Laravel Feature and Unit tests with factories, HTTP testing, database assertions, and mocking. Supports both PHPUnit and Pest.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Laravel Test Generator
 
 ## Usage
 Run `/laravel-test <ModelName>` or `/laravel-test <ClassName>`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Laravel
+2. **Fetch official docs**: Use `WebFetch` on the relevant Laravel documentation page (https://laravel.com/docs/) for the feature being generated
+3. **Verify patterns**: Confirm that the APIs, methods, and patterns shown in the examples below are still current
+4. **Use latest patterns**: If the framework has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Laravel version the code targets
 
 ## Structure
 Generates:

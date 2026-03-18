@@ -3,7 +3,7 @@ name: angular-component
 description: Generates production-ready Angular standalone components with signals, TypeScript, unit tests (Jasmine/Jest), and Storybook stories.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Angular Component Generator
@@ -12,6 +12,15 @@ This skill generates a complete, production-grade Angular standalone component.
 
 ## Usage
 Run `/angular-component <ComponentName>`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Angular
+2. **Fetch official docs**: Use `WebFetch` on the relevant Angular documentation page (https://angular.dev/) for the feature being generated
+3. **Verify patterns**: Confirm that standalone components, signals, input()/output() APIs, and control flow syntax (@if, @for) shown in examples are still current
+4. **Use latest patterns**: If Angular has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Angular version the code targets
 
 ## Structure
 Creates a folder `src/app/components/<component-name>/` containing:

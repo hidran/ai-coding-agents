@@ -3,7 +3,7 @@ name: laravel-event
 description: Generates a Laravel Event with Listener, queued Job, and Notification. Full async event-driven pipeline with tests.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Laravel Event Pipeline Generator
@@ -13,6 +13,15 @@ allowed-tools: [Read, Write, Grep, Glob]
 Run `/laravel-event <EventName>`
 
 The `<EventName>` should be a PascalCase noun phrase describing the domain event (e.g., `OrderPlaced`, `UserRegistered`, `PaymentFailed`).
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Laravel
+2. **Fetch official docs**: Use `WebFetch` on the relevant Laravel documentation page (https://laravel.com/docs/) for the feature being generated
+3. **Verify patterns**: Confirm that the APIs, methods, and patterns shown in the examples below are still current
+4. **Use latest patterns**: If the framework has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Laravel version the code targets
 
 ## Structure
 

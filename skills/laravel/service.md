@@ -3,7 +3,7 @@ name: laravel-service
 description: Generates a Laravel Service class with interface, ServiceProvider binding, dependency injection, and unit tests. Clean architecture pattern.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Laravel Service Generator
@@ -13,6 +13,15 @@ allowed-tools: [Read, Write, Grep, Glob]
 Run `/laravel-service <ServiceName>`
 
 Replace `<ServiceName>` with the domain concept (e.g., `Order`, `Payment`, `Inventory`). The generator will append `Service`, `ServiceInterface`, and `ServiceProvider` suffixes automatically.
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Laravel
+2. **Fetch official docs**: Use `WebFetch` on the relevant Laravel documentation page (https://laravel.com/docs/) for the feature being generated
+3. **Verify patterns**: Confirm that the APIs, methods, and patterns shown in the examples below are still current
+4. **Use latest patterns**: If the framework has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Laravel version the code targets
 
 ## Structure
 

@@ -3,7 +3,7 @@ name: laravel-livewire
 description: Generates Livewire 3 components with form objects, validation, real-time features, Alpine.js integration, and tests.
 type: skill
 category: skills
-allowed-tools: [Read, Write, Grep, Glob]
+allowed-tools: [Read, Write, Grep, Glob, WebSearch, WebFetch]
 ---
 
 # Laravel Livewire Component Generator
@@ -12,6 +12,15 @@ This skill scaffolds a complete Livewire 3 component with form objects, Blade te
 
 ## Usage
 Run `/laravel-livewire <ComponentName>`
+
+## Pre-Generation (MANDATORY)
+
+Before generating any code, you MUST:
+1. **Check latest version**: Use `WebSearch` to find the current stable version of Laravel
+2. **Fetch official docs**: Use `WebFetch` on the relevant Laravel documentation page (https://laravel.com/docs/) for the feature being generated
+3. **Verify patterns**: Confirm that the APIs, methods, and patterns shown in the examples below are still current
+4. **Use latest patterns**: If the framework has introduced newer or better approaches, prefer those over the examples below
+5. **Note version**: Add a comment in generated code indicating which Laravel version the code targets
 
 ## Structure
 Generates:
