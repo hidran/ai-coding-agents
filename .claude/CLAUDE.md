@@ -19,6 +19,14 @@ Master configuration for Claude Code. This file indexes available Skills, Rules,
 - `/angular-component` - Generates production-ready Angular standalone components with signals, TypeScript, unit tests (Jasmine/Jest), and Storybook stories.
 - `/angular-feature` - Generates a complete Angular feature with standalone components, service, routes, guards, resolver, and tests.
 - `/laravel-feature` - Generates a Laravel feature set including Model, Migration, Controller, FormRequest, and Policy.
+- `/laravel-action` - Generates a single-action class with __invoke, validation, authorization. Usable as controller action, queued job, or console command.
+- `/laravel-api-resource` - Generates API Resource and Collection classes for JSON transformation with conditional attributes, relationships, and pagination meta.
+- `/laravel-command` - Generates Artisan console commands with arguments, options, scheduling, progress bars, interactive prompts, and tests.
+- `/laravel-event` - Generates an Event with Listener, queued Job, and Notification. Full async event-driven pipeline with tests.
+- `/laravel-livewire` - Generates Livewire 3 components with form objects, validation, real-time features, Alpine.js integration, and tests.
+- `/laravel-middleware` - Generates HTTP middleware with before/after/terminable patterns, route registration, and tests.
+- `/laravel-service` - Generates a Service class with interface, ServiceProvider binding, dependency injection, and unit tests.
+- `/laravel-test` - Generates Feature and Unit tests with factories, HTTP testing, database assertions, and mocking. Supports PHPUnit and Pest.
 - `/nestjs-resource` - Generates a complete NestJS resource (Module, Controller, Service, DTOs, Entities) following clean architecture principles.
 - `/nextjs-page` - Generates a Next.js 14+ App Router page with metadata, loading state, error handling, and server/client component separation.
 - `/react-component` - Generates production-ready React components with TypeScript, tests (Vitest/Jest), Storybook stories, and Tailwind CSS.
