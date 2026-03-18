@@ -30,6 +30,12 @@ Master configuration for Claude Code. This file indexes available Skills, Rules,
 - `/nestjs-resource` - Generates a complete NestJS resource (Module, Controller, Service, DTOs, Entities) following clean architecture principles.
 - `/nextjs-page` - Generates a Next.js 14+ App Router page with metadata, loading state, error handling, and server/client component separation.
 - `/react-component` - Generates production-ready React components with TypeScript, tests (Vitest/Jest), Storybook stories, and Tailwind CSS.
+- `/supabase-auth` - Generates Supabase authentication flows including email/password, OAuth, magic link for React and Angular.
+- `/supabase-edge-function` - Generates Supabase Edge Functions (Deno/TypeScript) with CORS, authentication, and database access.
+- `/supabase-migration` - Generates Supabase database migrations with PostgreSQL, TypeScript types generation, and seed data.
+- `/supabase-realtime` - Generates Supabase Realtime subscriptions, broadcast channels, and presence tracking for React and Angular.
+- `/supabase-rls` - Generates Supabase Row Level Security policies with owner, team, role, and public-read patterns.
+- `/supabase-storage` - Generates Supabase Storage bucket configuration, RLS policies, and file upload components for React and Angular.
 - `/symfony-bundle` - Generates a Symfony bundle structure or a feature set (Entity, Repository, Controller, Form) within an existing app.
 
 ### Architecture & Documentation
@@ -103,6 +109,8 @@ Master configuration for Claude Code. This file indexes available Skills, Rules,
 - `seo-optimizer` - Use this agent when you need to optimize content for search engines, improve SEO rankings, or research keywords. Call this agent when creating content, optimizing existing pages, or developing SEO strategies.
 - `social-media-creator` - Use this agent when you need to create social media content, plan posting strategies, or engage with online communities. Call this agent when building social presence, creating content calendars, or developing platform-specific content.
 - `solution-architect` - Use this agent when you need to research and design comprehensive solutions for complex technical challenges. Call this agent when facing architecture problems, integration challenges, or when you need end-to-end solution design.
+- `supabase-architect` - Use this agent when you need to design Supabase database schemas, plan project architecture, optimize queries, or design real-time features. Call this agent when starting a new Supabase project, designing data models, or planning migrations.
+- `supabase-security-reviewer` - Use this agent when you need to audit Supabase RLS policies, review auth configuration, check for security vulnerabilities, or ensure data protection compliance. Call this agent before deploying Supabase projects to production.
 - `sql-expert` - Use this agent when you need to write complex SQL queries, optimize database performance, or solve data analysis problems. Call this agent when working with databases, creating reports, or troubleshooting query performance issues.
 - `support-responder` - Use this agent when you need to create customer support responses, help desk communications, or customer service templates. Call this agent when responding to customer issues, creating support documentation, or building customer service workflows.
 - `system-designer` - Use this agent when you need to design system architecture, plan technical infrastructure, or create end-to-end solutions for complex challenges. Call this agent when starting new projects, scaling existing systems, or facing complex architectural and integration problems.
