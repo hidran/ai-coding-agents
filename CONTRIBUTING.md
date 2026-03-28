@@ -4,9 +4,9 @@ We welcome contributions to make this the most comprehensive collection of Claud
 
 ## 🤝 How to Contribute
 
-## About this Fork
+## About this Project
 
-This project is a fork maintained by [hidran](https://github.com/hidran). We welcome contributions that align with the project's goals. Please submit issues and pull requests to this repository.
+This project is developed and maintained by [hidran](https://github.com/hidran). We welcome contributions that align with the project's goals. Please submit issues and pull requests to this repository.
 
 ### Adding New Agents
 
@@ -98,12 +98,11 @@ claude-agents/
 
 The development workflow is now safer and more automated, thanks to the new build and validation script.
 
-### 1. Fork and Clone
-If you haven't already, fork and clone the repository to your local machine.
+### 1. Clone the Repository
+If you haven't already, clone the repository to your local machine.
 ```bash
-git fork https://github.com/username/claude-agents
-git clone https://github.com/your-username/claude-agents
-cd claude-agents
+git clone https://github.com/hidran/ai-coding-agents.git
+cd ai-coding-agents
 ```
 
 ### 2. Create or Edit an Agent

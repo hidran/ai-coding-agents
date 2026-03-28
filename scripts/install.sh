@@ -76,6 +76,9 @@ for arg in "$@"; do
     --platform=*)
       PLATFORM="${arg#*=}"
       ;;
+    --kimi)
+      PLATFORM="kimi"
+      ;;
     --all)
       BUILD_ALL=true
       ;;

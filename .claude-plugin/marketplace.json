@@ -1,0 +1,16 @@
+{
+  "name": "AI Coding Agents",
+  "description": "65+ specialized AI agents for development workflows",
+  "maintainer": "hidran",
+  "plugins": [
+    {
+      "name": "ai-coding-agents",
+      "description": "Complete development workflow with 65+ specialized agents",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/hidran/ai-coding-agents.git"
+      },
+      "category": "development"
+    }
+  ]
+}

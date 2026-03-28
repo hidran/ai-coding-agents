@@ -101,7 +101,7 @@ ${c.bold('Examples:')}
 
 // Category mapping based on skill names
 const categoryPatterns = {
-  'architecture': ['api', 'database', 'system', 'tech-stack', 'feature-spec'],
+  'architecture': ['api', 'database', 'system', 'tech-stack', 'feature-spec', 'supabase-architect'],
   'code-quality': ['code', 'documentation', 'performance', 'refactoring', 'security', 'test'],
   'design': ['brand', 'color', 'design-system', 'icon', 'layout', 'typography', 'ui', 'wireframe'],
   'marketing': ['ad', 'blog', 'copywriter', 'email', 'landing', 'seo', 'social'],
@@ -112,6 +112,9 @@ const categoryPatterns = {
   'communication': ['api-documenter', 'changelog', 'presentation', 'support', 'team', 'technical-writer'],
   'research': ['best-practice', 'library', 'solution', 'technology', 'trend'],
   'project-management': ['agile', 'project'],
+  'workflow': ['brainstorming', 'writing-plans', 'subagent-driven-development', 'executing-plans', 
+               'test-driven-development', 'systematic-debugging', 'using-git-worktrees', 
+               'requesting-code-review', 'receiving-code-review'],
 };
 
 function inferCategory(skillName) {
@@ -125,24 +128,60 @@ function inferCategory(skillName) {
   return 'skills';
 }
 
-function getAllSkills(skillsDir) {
+function getAllSkills(skillsDir, rootDir) {
   const skills = [];
   
-  if (!fs.existsSync(skillsDir)) {
-    return skills;
-  }
-
-  const entries = fs.readdirSync(skillsDir, { withFileTypes: true });
+  // Source directories to scan for skills
+  const sourceDirs = [
+    { dir: skillsDir, type: 'skill' },
+    { dir: path.join(rootDir, 'workflow'), type: 'workflow' },
+    { dir: path.join(rootDir, 'architecture'), type: 'agent' },
+    { dir: path.join(rootDir, 'code-quality'), type: 'agent' },
+    { dir: path.join(rootDir, 'design'), type: 'agent' },
+    { dir: path.join(rootDir, 'marketing'), type: 'agent' },
+    { dir: path.join(rootDir, 'product'), type: 'agent' },
+    { dir: path.join(rootDir, 'business'), type: 'agent' },
+    { dir: path.join(rootDir, 'devops'), type: 'agent' },
+    { dir: path.join(rootDir, 'data'), type: 'agent' },
+    { dir: path.join(rootDir, 'communication'), type: 'agent' },
+    { dir: path.join(rootDir, 'research'), type: 'agent' },
+    { dir: path.join(rootDir, 'project-management'), type: 'agent' },
+  ];
   
-  for (const entry of entries) {
-    if (entry.isDirectory() && !entry.name.startsWith('.')) {
-      const skillFile = path.join(skillsDir, entry.name, 'SKILL.md');
-      if (fs.existsSync(skillFile)) {
-        const category = inferCategory(entry.name);
+  for (const { dir, type } of sourceDirs) {
+    if (!fs.existsSync(dir)) {
+      continue;
+    }
+
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    
+    for (const entry of entries) {
+      if (entry.isDirectory() && !entry.name.startsWith('.')) {
+        const skillFile = path.join(dir, entry.name, 'SKILL.md');
+        const mdFile = path.join(dir, entry.name + '.md');
+        
+        // Check for SKILL.md inside directory (for skills/)
+        if (fs.existsSync(skillFile)) {
+          const category = type === 'skill' ? inferCategory(entry.name) : type;
+          skills.push({
+            name: entry.name,
+            category,
+            path: path.join(dir, entry.name),
+            type,
+            sourceFile: skillFile
+          });
+        }
+      } else if (entry.isFile() && entry.name.endsWith('.md') && !entry.name.startsWith('.')) {
+        // Check for .md files directly in directory (for agents like architecture/, workflow/)
+        const baseName = entry.name.replace('.md', '');
+        // For agent and workflow types, use directory name as category; otherwise infer from name
+        const category = (type === 'agent' || type === 'workflow') ? path.basename(dir) : inferCategory(baseName);
         skills.push({
-          name: entry.name,
+          name: baseName,
           category,
-          path: path.join(skillsDir, entry.name)
+          path: dir,
+          type,
+          sourceFile: path.join(dir, entry.name)
         });
       }
     }
@@ -171,7 +210,7 @@ function listAllSkills(skills) {
   }
 
   const categoryOrder = [
-    'architecture', 'code-quality', 'design', 'marketing', 'product',
+    'workflow', 'architecture', 'code-quality', 'design', 'marketing', 'product',
     'business', 'devops', 'data', 'communication', 'research', 'project-management', 'skills'
   ];
 
@@ -208,7 +247,7 @@ async function interactiveSkillSelector(skills) {
   }
 
   const categoryOrder = [
-    'architecture', 'code-quality', 'design', 'marketing', 'product',
+    'workflow', 'architecture', 'code-quality', 'design', 'marketing', 'product',
     'business', 'devops', 'data', 'communication', 'research', 'project-management', 'skills'
   ];
 
@@ -270,7 +309,7 @@ async function simpleSkillSelector(skills) {
   }
 
   const categoryOrder = [
-    'architecture', 'code-quality', 'design', 'marketing', 'product',
+    'workflow', 'architecture', 'code-quality', 'design', 'marketing', 'product',
     'business', 'devops', 'data', 'communication', 'research', 'project-management', 'skills'
   ];
 
@@ -359,7 +398,7 @@ function parseFrontmatter(content) {
   }
 }
 
-async function processSkills(skillsDir, distDir, platform, skillsToBuild) {
+async function processSkills(rootDir, distDir, platform, skillsToBuild) {
   const distPlatformDir = path.join(distDir, `.${platform}`);
   
   // Clean and create distribution directory
@@ -386,65 +425,80 @@ async function processSkills(skillsDir, distDir, platform, skillsToBuild) {
   }
 
   for (const skill of skillsToBuild) {
-    const skillFile = path.join(skill.path, 'SKILL.md');
+    // Use the sourceFile property if available, otherwise construct path
+    const skillFile = skill.sourceFile || path.join(skill.path, 'SKILL.md');
     
     try {
       const content = fs.readFileSync(skillFile, 'utf-8');
       const frontmatter = parseFrontmatter(content);
       
-      if (!frontmatter) {
-        errors.push(`No frontmatter found in ${skillFile}`);
-        continue;
+      // For agent files (.md files without SKILL.md), extract info differently
+      let skillName = skill.name;
+      let skillDescription = '';
+      let skillModel = 'sonnet';
+      let skillCategory = skill.category;
+      
+      if (frontmatter) {
+        skillName = frontmatter.name || skill.name;
+        skillDescription = frontmatter.description || '';
+        skillModel = frontmatter.model || 'sonnet';
+        skillCategory = frontmatter.category || skill.category;
+      } else {
+        // Extract description from first paragraph
+        const paragraphs = content.split('\n\n').filter(p => p.trim());
+        if (paragraphs.length > 0) {
+          const firstPara = paragraphs[0].replace(/^#+\s*/, '').trim();
+          skillDescription = firstPara.substring(0, 200);
+        }
       }
 
-      if (!frontmatter.name || !frontmatter.description) {
-        errors.push(`Missing required fields in ${skillFile}`);
+      if (!skillName) {
+        errors.push(`Missing name in ${skillFile}`);
         continue;
       }
-
-      const category = inferCategory(frontmatter.name);
-      const model = frontmatter.model || 'sonnet';
 
       allSkillsData.push({
-        name: frontmatter.name,
-        category,
-        description: frontmatter.description,
-        type: 'skill',
-        model,
-        file_path: path.relative(path.join(skillsDir, '..'), skillFile)
+        name: skillName,
+        category: skillCategory,
+        description: skillDescription,
+        type: skill.type || 'skill',
+        model: skillModel,
+        file_path: path.relative(rootDir, skillFile)
       });
 
       // Copy skill to distribution
-      const destSkillDir = path.join(distPlatformDir, 'skills', frontmatter.name);
+      const destSkillDir = path.join(distPlatformDir, 'skills', skillName);
       fs.mkdirSync(destSkillDir, { recursive: true });
       fs.copyFileSync(skillFile, path.join(destSkillDir, 'SKILL.md'));
 
-      // Copy sibling files and directories
-      const entries = fs.readdirSync(skill.path, { withFileTypes: true });
-      for (const entry of entries) {
-        if (entry.name === 'SKILL.md') continue;
-        
-        const src = path.join(skill.path, entry.name);
-        const dest = path.join(destSkillDir, entry.name);
-        
-        if (entry.isDirectory() && !entry.name.startsWith('.') && 
-            !['node_modules', '__pycache__', '.git', '.venv', 'venv'].includes(entry.name)) {
-          fs.cpSync(src, dest, { recursive: true });
-        } else if (entry.isFile()) {
-          fs.copyFileSync(src, dest);
+      // Copy sibling files if skill is a directory-based skill
+      if (skill.sourceFile && skill.sourceFile.endsWith('SKILL.md') && skill.path !== skill.sourceFile) {
+        const entries = fs.readdirSync(skill.path, { withFileTypes: true });
+        for (const entry of entries) {
+          if (entry.name === 'SKILL.md') continue;
+          
+          const src = path.join(skill.path, entry.name);
+          const dest = path.join(destSkillDir, entry.name);
+          
+          if (entry.isDirectory() && !entry.name.startsWith('.') && 
+              !['node_modules', '__pycache__', '.git', '.venv', 'venv'].includes(entry.name)) {
+            fs.cpSync(src, dest, { recursive: true });
+          } else if (entry.isFile()) {
+            fs.copyFileSync(src, dest);
+          }
         }
       }
 
       // Generate platform-specific code
       if (platform === 'gemini' || platform === 'codex') {
-        const mappedModel = modelMaps[platform][model] || model;
-        const className = frontmatter.name.replace(/-/g, '_').replace(/(^|_)([a-z])/g, (m, p1, p2) => (p1 ? '_' : '') + p2.toUpperCase()) + 'Skill';
+        const mappedModel = modelMaps[platform][skillModel] || skillModel;
+        const className = skillName.replace(/-/g, '_').replace(/(^|_)([a-z])/g, (m, p1, p2) => (p1 ? '_' : '') + p2.toUpperCase()) + 'Skill';
         
         platformContent.push(`class ${className}:\n`);
-        platformContent.push(`    name: str = "${frontmatter.name}"\n`);
-        platformContent.push(`    description: str = "${frontmatter.description.replace(/"/g, '\\"')}"\n`);
-        platformContent.push(`    category: str = "${category}"\n`);
-        platformContent.push(`    type: str = "skill"\n`);
+        platformContent.push(`    name: str = "${skillName}"\n`);
+        platformContent.push(`    description: str = "${skillDescription.replace(/"/g, '\\"')}"\n`);
+        platformContent.push(`    category: str = "${skillCategory}"\n`);
+        platformContent.push(`    type: str = "${skill.type || 'skill'}"\n`);
         platformContent.push(`    model: str = "${mappedModel}"\n`);
         
         const instructions = content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '').trim();
@@ -486,11 +540,12 @@ function generateReadme(rootDir, skillsData) {
   }
 
   const categoryOrder = [
-    'architecture', 'code-quality', 'design', 'marketing', 'product',
+    'workflow', 'architecture', 'code-quality', 'design', 'marketing', 'product',
     'business', 'devops', 'data', 'communication', 'research', 'project-management', 'skills'
   ];
 
   const categoryDescriptions = {
+    workflow: 'Development process automation and methodology enforcement',
     architecture: 'The masterminds who design your digital empire',
     'code-quality': 'The guardians of clean, secure, and blazing-fast code',
     design: 'The creative geniuses who make everything beautiful',
@@ -554,7 +609,7 @@ function generatePlatformMd(distDir, skillsData, platform) {
   }
 
   const categoryOrder = [
-    'architecture', 'code-quality', 'design', 'marketing', 'product',
+    'workflow', 'architecture', 'code-quality', 'design', 'marketing', 'product',
     'business', 'devops', 'data', 'communication', 'research', 'project-management', 'skills'
   ];
 
@@ -591,8 +646,8 @@ async function main() {
     process.exit(1);
   }
 
-  // Get all available skills
-  const allAvailableSkills = getAllSkills(skillsDir);
+  // Get all available skills from multiple source directories
+  const allAvailableSkills = getAllSkills(skillsDir, rootDir);
 
   if (allAvailableSkills.length === 0) {
     console.error(c.error('Error: No skills found in the skills directory.'));
@@ -674,7 +729,7 @@ async function main() {
   }
 
   // Process skills
-  const { allSkillsData, errors } = await processSkills(skillsDir, distDir, platform, skillsToBuild);
+  const { allSkillsData, errors } = await processSkills(rootDir, distDir, platform, skillsToBuild);
 
   if (errors.length === 0) {
     // Write manifest

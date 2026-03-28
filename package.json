@@ -1,15 +1,28 @@
 {
   "name": "ai-coding-agents",
   "version": "2.0.0",
-  "description": "AI Coding Agents - A collection of specialized AI skills for development workflows",
+  "description": "65+ specialized AI agents for development workflows - Claude Code plugin, Gemini extension, and Kimi CLI skill",
   "scripts": {
     "build": "node scripts/build.js",
     "build:all": "node scripts/build.js --all",
     "build:list": "node scripts/build.js --list",
-    "install:skills": "bash scripts/install.sh"
+    "build:claude": "node scripts/build.js --platform=claude --all",
+    "build:gemini": "node scripts/build.js --platform=gemini --all",
+    "build:codex": "node scripts/build.js --platform=codex --all",
+    "build:kimi": "node scripts/build.js --platform=kimi --all",
+    "install:skills": "bash scripts/install.sh",
+    "install:claude": "bash scripts/install.sh --platform=claude --all",
+    "install:gemini": "bash scripts/install.sh --platform=gemini --all",
+    "install:codex": "bash scripts/install.sh --platform=codex --all",
+    "install:kimi": "bash scripts/install.sh --platform=kimi --all",
+    "plugin:install": "claude plugin install ai-coding-agents@hidran/ai-coding-agents",
+    "plugin:update": "claude plugin update ai-coding-agents",
+    "gemini:install": "gemini extensions install https://github.com/hidran/ai-coding-agents",
+    "gemini:update": "gemini extensions update ai-coding-agents"
   },
   "bin": {
-    "ai-agents-build": "./scripts/build.js"
+    "ai-agents-build": "./scripts/build.js",
+    "ai-coding-agents": "./scripts/install.sh"
   },
   "keywords": [
     "ai",
@@ -17,10 +30,29 @@
     "skills",
     "claude",
     "claude-code",
+    "claude-plugin",
+    "gemini",
+    "gemini-extension",
+    "kimi",
+    "kimi-cli",
+    "codex",
+    "opencode",
     "development",
-    "productivity"
+    "productivity",
+    "workflow",
+    "tdd",
+    "subagent"
   ],
+  "author": "hidran",
   "license": "MIT",
+  "homepage": "https://github.com/hidran/ai-coding-agents",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hidran/ai-coding-agents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hidran/ai-coding-agents/issues"
+  },
   "devDependencies": {
     "chalk": "^4.1.2",
     "fs-extra": "^11.1.1",
@@ -29,5 +61,15 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "claude-plugin": {
+    "name": "ai-coding-agents",
+    "entry": "dist/.claude/skills",
+    "minVersion": "0.1.0"
+  },
+  "gemini-extension": {
+    "name": "ai-coding-agents",
+    "entry": "dist/.gemini/skills",
+    "type": "skills"
   }
 }

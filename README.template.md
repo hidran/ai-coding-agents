@@ -1,11 +1,8 @@
 # AI Agents 🤖
 
 <div align="center">
-  <img src="https://vizra.ai/img/vizra-logo.svg" alt="Vizra" width="120" style="margin-bottom: 20px;">
-  
-  Forked and maintained by [hidran](https://github.com/hidran)
-  
-  <small>Based on the original project by [Vizra-AI](https://github.com/vizra-ai/claude-code-agents)</small>
+  <h2>🤖 AI Agents</h2>
+  <p>Developed and maintained by <a href="https://github.com/hidran">hidran</a></p>
 </div>
 
 ---
@@ -14,9 +11,30 @@
 
 Meet 59 specialized AI agents that supercharge your development workflow. From system architecture to marketing copy, these Claude Code agents are like having a whole team of experts at your fingertips - and they never need coffee breaks!
 
-## 🚀 Quick Install (One-Liner)
+## 🚀 Quick Install
 
-You can install the agents directly into your current project without manually cloning the repository:
+### Claude Code Plugin (Recommended)
+
+```bash
+# Install via Claude Code marketplace
+/plugin marketplace add hidran/ai-coding-agents
+/plugin install ai-coding-agents@hidran/ai-coding-agents
+
+# Or directly
+/plugin install https://github.com/hidran/ai-coding-agents
+```
+
+### Gemini CLI Extension
+
+```bash
+# Install as Gemini extension
+gemini extensions install https://github.com/hidran/ai-coding-agents
+
+# Update
+gemini extensions update ai-coding-agents
+```
+
+### One-Liner Install (Any Platform)
 
 ```bash
 # For Claude (default)
@@ -27,6 +45,9 @@ bash -c 'D=$(mktemp -d); git clone --depth 1 https://github.com/hidran/ai-coding
 
 # For Codex
 bash -c 'D=$(mktemp -d); git clone --depth 1 https://github.com/hidran/ai-coding-agents.git "$D" -q; "$D/scripts/install.sh" "$@"; rm -rf "$D"' -- codex
+
+# For Kimi CLI
+bash -c 'D=$(mktemp -d); git clone --depth 1 https://github.com/hidran/ai-coding-agents.git "$D" -q; "$D/scripts/install.sh" "$@"; rm -rf "$D"' -- kimi
 ```
 
 ## 🚀 Quick Start (Manual)
@@ -102,6 +123,39 @@ Once installed, it's like having your own AI specialists on speed dial! 📞
 📚 **New to Claude Code agents?** Check out the [official documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents) to learn how agents work.
 
 {{AGENT_LIST}}
+
+## 🚀 Workflow Skills (Inspired by Superpowers)
+
+This package includes 8 powerful **workflow skills** that bring structured development methodologies to your AI agents:
+
+| Skill | Purpose |
+|-------|---------|
+| `brainstorming` | Refine ideas through Socratic questioning before coding |
+| `writing-plans` | Break designs into 2-5 minute actionable tasks |
+| `subagent-driven-development` | Execute plans with parallel subagents and two-stage review |
+| `executing-plans` | Batch implementation with human checkpoints |
+| `test-driven-development` | Enforce RED-GREEN-REFACTOR cycles |
+| `systematic-debugging` | 4-phase root cause analysis |
+| `using-git-worktrees` | Isolated development environments |
+| `requesting-code-review` | Pre-merge quality gates |
+
+### Development Workflow
+
+These skills work together to create a complete development lifecycle:
+
+```
+brainstorming → writing-plans → using-git-worktrees → subagent-driven-development
+       ↓                                                        ↓
+[Design doc]                                          test-driven-development
+       ↓                                                        ↓
+writing-plans ←←←←←←←←← requesting-code-review ←←←←←← [Implementation]
+```
+
+**Key Principles:**
+- 🧪 **Test-First**: Write failing tests before implementation
+- 📋 **Plan-Driven**: Every task has exact specifications
+- 🔍 **Evidence-Based**: Debug systematically, don't guess
+- ✓ **Quality Gates**: Two-stage review before completion
 
 ## 🎯 What Makes These Agents Special
 
