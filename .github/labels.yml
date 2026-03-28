@@ -1,0 +1,99 @@
+# GitHub Labels for AI Coding Agents
+
+# Type Labels
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working"
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or request"
+
+- name: "documentation"
+  color: "0075ca"
+  description: "Improvements or additions to documentation"
+
+- name: "new-agent"
+  color: "7057ff"
+  description: "Proposals for new AI agents"
+
+- name: "workflow"
+  color: "0052cc"
+  description: "Related to workflow skills"
+
+# Priority Labels
+- name: "priority-high"
+  color: "b60205"
+  description: "High priority item"
+
+- name: "priority-medium"
+  color: "fbca04"
+  description: "Medium priority item"
+
+- name: "priority-low"
+  color: "0e8a16"
+  description: "Low priority item"
+
+# Status Labels
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers"
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention is needed"
+
+- name: "stale"
+  color: "ffffff"
+  description: "Inactive issue/PR"
+
+- name: "work-in-progress"
+  color: "c5def5"
+  description: "Still being worked on"
+
+# Category Labels
+- name: "agent:architecture"
+  color: "c2e0c6"
+  description: "Architecture agents"
+
+- name: "agent:code-quality"
+  color: "c2e0c6"
+  description: "Code quality agents"
+
+- name: "agent:design"
+  color: "c2e0c6"
+  description: "Design agents"
+
+- name: "agent:marketing"
+  color: "c2e0c6"
+  description: "Marketing agents"
+
+- name: "agent:devops"
+  color: "c2e0c6"
+  description: "DevOps agents"
+
+# Platform Labels
+- name: "platform:claude"
+  color: "fef2c0"
+  description: "Claude Code specific"
+
+- name: "platform:gemini"
+  color: "fef2c0"
+  description: "Gemini CLI specific"
+
+- name: "platform:kimi"
+  color: "fef2c0"
+  description: "Kimi CLI specific"
+
+# Special Labels
+- name: "breaking-change"
+  color: "d93f0b"
+  description: "Changes that break compatibility"
+
+- name: "security"
+  color: "d73a4a"
+  description: "Security related"
+
+- name: "pinned"
+  color: "0052cc"
+  description: "Pinned item, don't stale"

@@ -1,0 +1,48 @@
+title: ""
+labels: ["discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 Welcome to AI Coding Agents Discussions!
+        
+        Use this space for:
+        - 💡 Sharing ideas
+        - ❓ Asking questions
+        - 🎉 Showcasing your projects
+        - 🤝 Finding collaborators
+
+  - type: textarea
+    id: topic
+    attributes:
+      label: What would you like to discuss?
+      description: Describe your topic, question, or idea
+      placeholder: "I've been using the TDD workflow skill and..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: category
+    attributes:
+      label: Category
+      options:
+        - label: "💡 Idea / Feature Request"
+        - label: "❓ Question / Help"
+        - label: "🎉 Show and Tell"
+        - label: "🤝 Collaboration"
+        - label: "🐛 Bug (not a security issue)"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any additional information that might be helpful
+      placeholder: "Screenshots, code examples, use cases..."
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
